@@ -46,7 +46,7 @@
 //    self.sendBlock(self.playArray[btn.tag-1]);
     RPlayViewController *play=[RPlayViewController new];
     play.url=[self.playArray[btn.tag-1] objectForKey:@"srcUrl"];
-    [self presentViewController:play animated:YES completion:nil];
-//        [self.navigationController pushViewController:play animated:YES];
+//    [self presentViewController:play animated:YES completion:nil];
+        [self.navigationController pushViewController:play animated:YES];
 }
 @end

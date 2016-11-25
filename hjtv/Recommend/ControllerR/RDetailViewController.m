@@ -57,8 +57,8 @@ dispatch_semaphore_t sema;
 - (IBAction)play:(id)sender {
     RPlayViewController *play=[[RPlayViewController alloc]init];
     play.url=[self.playArray[0] objectForKey:@"srcUrl"];
-    [self presentViewController:play animated:YES completion:nil];
-//    [self.navigationController pushViewController:play animated:YES];
+//    [self presentViewController:play animated:YES completion:nil];
+    [self.navigationController pushViewController:play animated:YES];
 }
 - (IBAction)hc:(id)sender {
 }
@@ -97,6 +97,11 @@ dispatch_semaphore_t sema;
     [self setLine];
     [self setSc];
     [self getModelData];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.barTintColor=[UIColor redColor];
 }
 -(void)setNavigation
 {
@@ -173,4 +178,5 @@ dispatch_semaphore_t sema;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end

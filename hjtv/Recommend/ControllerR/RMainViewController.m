@@ -32,6 +32,7 @@
 {
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.hidden=YES;
+    self.tabBarController.tabBar.hidden=NO;
 }
 - (IBAction)hjbn:(id)sender {
     [UIView beginAnimations:nil context:nil];

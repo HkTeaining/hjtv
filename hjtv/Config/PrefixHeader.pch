@@ -13,4 +13,10 @@
 #import "UIKit+AFNetworking.h"
 #import "Config.h"
 #import "NetRequestClass.h"
+#import "MJExtension.h"
+#define firstUrl @"http://api.hanju.koudaibaobao.com/api/series/indexV2?_ts=1479963005307&count=60&offset=0"
+#define firstUrlInfo @"http://api.hanju.koudaibaobao.com/api/series/detailV3?_ts=1479965049308&sid=BZu2kz7YqNRuLHZb5wkM"
+#define secondUrl @"http://api.hanju.koudaibaobao.com/api/star/index?_ts=1479963052417"
+#define secondUrlDy @"http://api.hanju.koudaibaobao.com/api/star/hotVideos?_ts=1479963052395&count=30&offset=0"
 #endif
+

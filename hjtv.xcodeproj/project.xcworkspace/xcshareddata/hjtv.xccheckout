@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A74B97E9-EBF3-468A-AE67-4402A8993B75</string>
+	<key>IDESourceControlProjectName</key>
+	<string>hjtv</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>849C1F75B00C12840EF486A24892B507CC1F3109</key>
+		<string>https://github.com/HkTeaining/hjtv.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>hjtv.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>849C1F75B00C12840EF486A24892B507CC1F3109</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/HkTeaining/hjtv.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>849C1F75B00C12840EF486A24892B507CC1F3109</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>849C1F75B00C12840EF486A24892B507CC1F3109</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hjtv</string>
+		</dict>
+	</array>
+</dict>
+</plist>

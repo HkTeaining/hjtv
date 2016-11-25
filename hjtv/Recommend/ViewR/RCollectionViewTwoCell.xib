@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="162" height="107"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="danmu_color_green_highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="DKP-gk-ivT">
-                        <rect key="frame" x="0.0" y="0.0" width="162" height="67"/>
+                        <rect key="frame" x="0.0" y="0.0" width="162" height="77"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="30"/>
@@ -22,14 +22,14 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_rank_1" translatesAutoresizingMaskIntoConstraints="NO" id="9qA-VX-mFi">
-                        <rect key="frame" x="0.0" y="52" width="20" height="20"/>
+                        <rect key="frame" x="0.0" y="62" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="QJg-Jn-p5J"/>
                             <constraint firstAttribute="width" constant="20" id="Zpj-cv-S7B"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余礼秋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-N2-hi3">
-                        <rect key="frame" x="0.0" y="77" width="162" height="30"/>
+                        <rect key="frame" x="0.0" y="87" width="162" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -45,7 +45,7 @@
                 <constraint firstItem="DKP-gk-ivT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aOo-eR-tma"/>
                 <constraint firstAttribute="trailing" secondItem="DKP-gk-ivT" secondAttribute="trailing" id="d0n-sQ-79h"/>
                 <constraint firstItem="9qA-VX-mFi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jxQ-PK-6rD"/>
-                <constraint firstAttribute="bottom" secondItem="DKP-gk-ivT" secondAttribute="bottom" constant="40" id="thI-Kc-WSs"/>
+                <constraint firstAttribute="bottom" secondItem="DKP-gk-ivT" secondAttribute="bottom" constant="30" id="thI-Kc-WSs"/>
                 <constraint firstAttribute="bottom" secondItem="Qn4-N2-hi3" secondAttribute="bottom" id="z9o-bw-icB"/>
             </constraints>
             <size key="customSize" width="162" height="107"/>

@@ -10,9 +10,13 @@
 #import "RCollectionHeaderViewCollectionReusableView.h"
 #import "RCollectionViewThreeCell.h"
 #import "RCollectionViewTwoCell.h"
+#import "NetRequestClass+Recommend.h"
+#import "UIImageView+WebCache.h"
 
 @interface RSecondViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *myColOne;
+@property(nonatomic,retain)NSMutableArray *starArray;
+@property(nonatomic,retain)NSMutableArray *starDyArray;
 
 @end
 
@@ -20,8 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self getModelData];
     [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewTwoCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdtwo"];
     [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewThreeCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdthree"];
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
@@ -32,6 +36,17 @@
     flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
     self.myColOne.collectionViewLayout=flowLayout;
     self.myColOne.backgroundColor=[UIColor whiteColor];
+}
+-(void)getModelData
+{
+    [NetRequestClass getStarVideoListForRequestUrl:secondUrl  WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
+        self.starArray=returnValue;
+        [NetRequestClass getStarDyVideoListForRequestUrl:secondUrlDy WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
+            self.starDyArray=returnValue;
+            self.myColOne.delegate=self;
+            self.myColOne.dataSource=self;
+        }];
+    }];
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
@@ -83,7 +98,7 @@
         return 8;
     }else
     {
-        return 56;
+        return self.starDyArray.count;
     }
 }
 //1(x) 1(x) 1/1/(x) 1/1/(x) x x x x
@@ -95,7 +110,7 @@
             UIImageView *im=(UIImageView *)[cell viewWithTag:100];
             im.image=[UIImage imageNamed:@"star_rank_more"];
             UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
-              imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%d",indexPath.row]];
+            imTwo.image=nil;
             UILabel *la=(UILabel *)[cell viewWithTag:200];
             la.text=@"更多";
             la.font=[UIFont systemFontOfSize:15];
@@ -105,23 +120,23 @@
         }
         RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdtwo" forIndexPath:indexPath];
         UIImageView *im=(UIImageView *)[cell viewWithTag:100];
-        im.image=[UIImage imageNamed:@"danmu_color_green_highlighted"];
+        [im sd_setImageWithURL:[NSURL URLWithString:[self.starArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
         UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
         imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%d",indexPath.row+1]];
         UILabel *la=(UILabel *)[cell viewWithTag:200];
             cell.backgroundColor=[UIColor whiteColor];
-        la.text=@"余礼秋";
+        la.text=[NSString stringWithFormat:@"%@",[self.starArray[indexPath.row] objectForKey:@"name"]];
         return cell;
     }else
     {
         RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdthree" forIndexPath:indexPath];
         UIImageView *im=(UIImageView *)[cell viewWithTag:200];
-        im.image=[UIImage imageNamed:@"danmu_roll_highlighted"];
+         [im sd_setImageWithURL:[NSURL URLWithString:[self.starDyArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
         UILabel *la0=(UILabel *)[cell viewWithTag:100];
         la0.text=@"02:44";
-        la0.font=[UIFont systemFontOfSize:17];
+        la0.font=[UIFont systemFontOfSize:13];
         UILabel *la1=(UILabel *)[cell viewWithTag:300];
-        la1.text=@"蓝色大海的传说拍摄";
+        la1.text=[NSString stringWithFormat:@"%@",[self.starDyArray[indexPath.row] objectForKey:@"title"]];
         la1.font=[UIFont systemFontOfSize:15];
         cell.backgroundColor=[UIColor whiteColor];
         return cell;

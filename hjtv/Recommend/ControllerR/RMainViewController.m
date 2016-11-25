@@ -52,7 +52,7 @@
 }
 -(void)setSc
 {
-    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64,320,416)];
+    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64,320,416-49)];
     self.sc.backgroundColor = [UIColor whiteColor];
     self.sc.bounces=NO;
     self.sc.delegate = self;
@@ -65,7 +65,7 @@
     [self addChildViewController:self.secondVC];
     [self.sc addSubview:self.secondVC.view];
     self.currentVC = self.firstVC;
-    self.sc.contentSize = CGSizeMake(640, 416);
+    self.sc.contentSize = CGSizeMake(640, 416-49);
     self.sc.showsVerticalScrollIndicator = NO;
     self.sc.showsHorizontalScrollIndicator = NO;
     //sc.contentOffset = CGPointMake(200, 0);

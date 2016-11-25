@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RPlayViewController : UIViewController
-
+@property(nonatomic,retain)NSString *url;
 @end

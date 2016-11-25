@@ -6,7 +6,11 @@
 //  Copyright (c) 2016年 AFNetworking Tet. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
+
+
+#import  <UIKit/UIKit.h>
+
 
 @interface VarietyViewController : UIViewController
 

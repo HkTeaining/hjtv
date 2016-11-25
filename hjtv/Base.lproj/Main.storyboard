@@ -7,7 +7,7 @@
         <!--three-->
         <scene sceneID="nwt-c9-fe8">
             <objects>
-                <viewController id="AhH-7d-tk9" userLabel="three" sceneMemberID="viewController">
+                <viewController id="AhH-7d-tk9" userLabel="three" customClass="ZjViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Skq-Mn-C4y"/>
                         <viewControllerLayoutGuide type="bottom" id="NJM-Hf-UWr"/>
@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOk-df-Cph">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <color key="backgroundColor" red="1" green="0.1294601943" blue="0.22765505529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9169921875" green="0.82938425164473684" blue="0.72021484375" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="TAk-Ol-Qys"/>
                                     <constraint firstAttribute="height" constant="64" id="ZSk-df-Nza"/>
@@ -46,7 +46,7 @@
         <!--second-->
         <scene sceneID="psL-1b-qle">
             <objects>
-                <viewController id="DA0-DE-KfO" userLabel="second" sceneMemberID="viewController">
+                <viewController id="DA0-DE-KfO" userLabel="second" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gND-lA-ASk"/>
                         <viewControllerLayoutGuide type="bottom" id="8i1-vZ-6TQ"/>
@@ -57,7 +57,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yp3-cu-RJ8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <color key="backgroundColor" red="1" green="0.1294601943" blue="0.22765505529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92184930098684215" green="0.83120888157894501" blue="0.72180818256578949" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="j1k-Z7-3Dg"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="z6Y-4d-E7p"/>
@@ -136,7 +136,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.1294601943" blue="0.22765505529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.91673519736842102" green="0.83192845394736847" blue="0.72404399671052633" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8sN-hH-yJ1" firstAttribute="leading" secondItem="sXD-fT-oDy" secondAttribute="leading" constant="100" id="JQV-fv-Svq"/>
                                     <constraint firstItem="gm6-ll-pjP" firstAttribute="top" secondItem="sXD-fT-oDy" secondAttribute="top" constant="20" id="OT8-Uu-pCt"/>
@@ -199,6 +199,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5P2-i1-2m9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9169921875" green="0.82938425159999996" blue="0.7202148438" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="AhH-7d-tk9" kind="relationship" relationship="rootViewController" id="c4S-SM-B63"/>
@@ -216,6 +217,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SRy-sh-Qa0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9169921875" green="0.82938425159999996" blue="0.7202148438" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="DA0-DE-KfO" kind="relationship" relationship="rootViewController" id="Ch7-Lf-8l5"/>
@@ -233,6 +235,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eHO-0R-zN7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9169921875" green="0.82938425159999996" blue="0.7202148438" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="uoe-tq-leL" kind="relationship" relationship="rootViewController" id="CX3-HJ-DxK"/>

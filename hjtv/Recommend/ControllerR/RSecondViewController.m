@@ -12,6 +12,9 @@
 #import "RCollectionViewTwoCell.h"
 #import "NetRequestClass+Recommend.h"
 #import "UIImageView+WebCache.h"
+#import "StarDetailViewController.h"
+#import "RPlayViewController.h"
+#import "MoreDetailViewController.h"
 
 @interface RSecondViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *myColOne;
@@ -108,7 +111,11 @@
         if (indexPath.row==7) {
             RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdtwo" forIndexPath:indexPath];
             UIImageView *im=(UIImageView *)[cell viewWithTag:100];
+            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapTwo:)];
+            [im addGestureRecognizer:singleTap];
+            im.userInteractionEnabled=YES;
             im.image=[UIImage imageNamed:@"star_rank_more"];
+            
             UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
             imTwo.image=nil;
             UILabel *la=(UILabel *)[cell viewWithTag:200];
@@ -121,6 +128,9 @@
         RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdtwo" forIndexPath:indexPath];
         UIImageView *im=(UIImageView *)[cell viewWithTag:100];
         [im sd_setImageWithURL:[NSURL URLWithString:[self.starArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        [im addGestureRecognizer:singleTap];
+        im.userInteractionEnabled=YES;
         UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
         imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%d",indexPath.row+1]];
         UILabel *la=(UILabel *)[cell viewWithTag:200];
@@ -132,6 +142,9 @@
         RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdthree" forIndexPath:indexPath];
         UIImageView *im=(UIImageView *)[cell viewWithTag:200];
          [im sd_setImageWithURL:[NSURL URLWithString:[self.starDyArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapThree:)];
+        [im addGestureRecognizer:singleTap];
+        im.userInteractionEnabled=YES;
         UILabel *la0=(UILabel *)[cell viewWithTag:100];
         la0.text=@"02:44";
         la0.font=[UIFont systemFontOfSize:13];
@@ -143,5 +156,15 @@
     }
     
 }
-
+- (void)singleTap:(UITapGestureRecognizer *)tap {
+    StarDetailViewController *rdetail=[[StarDetailViewController alloc]init];
+    [self.navigationController pushViewController:rdetail animated:YES];
+}- (void)singleTapTwo:(UITapGestureRecognizer *)tap {
+    MoreDetailViewController *rdetail=[[MoreDetailViewController alloc]init];
+    [self.navigationController pushViewController:rdetail animated:YES];
+}
+- (void)singleTapThree:(UITapGestureRecognizer *)tap {
+    RPlayViewController *rdetail=[[RPlayViewController alloc]init];
+    [self.navigationController pushViewController:rdetail animated:YES];
+}
 @end

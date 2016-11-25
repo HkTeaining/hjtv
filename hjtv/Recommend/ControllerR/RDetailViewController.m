@@ -101,16 +101,14 @@ dispatch_semaphore_t sema;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    self.navigationController.navigationBar.barTintColor=[UIColor redColor];
+    self.navigationController.navigationBar.backgroundColor=[UIColor colorWithRed:234 green:212 blue:185 alpha:1];
 }
 -(void)setNavigation
 {
     self.navigationController.navigationBar.hidden=NO;
-    self.navigationController.navigationBar.backgroundColor=[UIColor redColor];
     self.navigationItem.title=[NSString stringWithFormat:@"%@",[self.seriesArray[0] name]];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(dj)];
-    self.navigationController.navigationBar.barTintColor=[UIColor redColor];
 }
 -(void)setSc
 {

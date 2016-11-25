@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchViewController : UIViewController
-- (IBAction)varietyButton:(UIButton *)sender;
-- (IBAction)movieButton:(UIButton *)sender;
-- (IBAction)forumButton:(UIButton *)sender;
+
 
 @end
+

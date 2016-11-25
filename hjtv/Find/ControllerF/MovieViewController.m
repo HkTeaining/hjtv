@@ -10,13 +10,45 @@
 
 @interface MovieViewController ()
 
+@property (nonatomic,strong)NSMutableArray *mutableArry;
+@property (nonatomic,strong)UIScrollView *movieScrollView;
 @end
 
 @implementation MovieViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"电影";
+     self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
+    
+}
+#pragma mark - initView
+-(void)initView{
+    self.mutableArry = nil;
+    self.movieScrollView.frame = CGRectMake(0, 44, 320, 10000);
+    self.movieScrollView.contentOffset = CGPointMake(0, 436);
+   
+}
+
+#pragma mark - setters getters
+
+-(NSMutableArray *)mutableArry{
+    if (!_mutableArry) {
+        _mutableArry = [NSMutableArray array];
+        
+    }
+    return _mutableArry;
+}
+-(UIScrollView *)movieScrollView{
+    if (!_movieScrollView) {
+        _movieScrollView = [[UIScrollView alloc]init];
+        [self.view addSubview:_movieScrollView];
+    }
+    return _movieScrollView;
+}
+#pragma mark - Private Methods
+-(void)search{
+    
 }
 
 - (void)didReceiveMemoryWarning {

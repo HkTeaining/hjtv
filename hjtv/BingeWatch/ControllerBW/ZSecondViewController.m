@@ -1,22 +1,22 @@
 //
-//  ForumViewController.m
+//  ZSecondViewController.m
 //  hjtv
 //
-//  Created by mac on 16/11/23.
-//  Copyright (c) 2016年 AFNetworking Tet. All rights reserved.
+//  Created by mac on 16/11/25.
+//  Copyright © 2016年 AFNetworking Tet. All rights reserved.
 //
 
-#import "ForumViewController.h"
+#import "ZSecondViewController.h"
 
-@interface ForumViewController ()
+@interface ZSecondViewController ()
 
 @end
 
-@implementation ForumViewController
+@implementation ZSecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

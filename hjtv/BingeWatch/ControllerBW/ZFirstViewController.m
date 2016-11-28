@@ -8,7 +8,7 @@
 
 #import "ZFirstViewController.h"
 
-@interface ZFirstViewController ()
+@interface ZFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -18,10 +18,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 100;
+//}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//
+//    return 5;
+//}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+//    cell.textLabel.text=@"大海的天空在传说";
+//    return cell;
+//
+//}
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RDetailViewController : UIViewController
-
+@property(nonatomic,assign)NSInteger selectRow;
+@property(nonatomic,retain)NSMutableArray *recivceArray;
 @end

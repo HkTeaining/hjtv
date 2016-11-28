@@ -11,4 +11,6 @@
 @interface RSFirstViewController : UIViewController
 typedef void (^SendValueBlock)(NSString *);
 @property(nonatomic,copy)SendValueBlock sendBlock;
+@property(nonatomic,retain)NSMutableArray *recivceTwoArray;
+@property(nonatomic,assign)NSInteger selectTwoRow;
 @end

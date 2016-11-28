@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RSSecondViewController : UIViewController
-
+@property(nonatomic,retain)NSMutableArray *recivceThreeArray;
+@property(nonatomic,assign)NSInteger selectThreeRow;
+@property(nonatomic,retain)NSMutableArray *recivceDataArray;
 @end

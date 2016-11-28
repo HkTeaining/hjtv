@@ -23,6 +23,7 @@
     self.navigationController.navigationBar.hidden=NO;
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem.tintColor=[UIColor grayColor];
+      self.navigationController.navigationBar.backgroundColor=[UIColor blackColor];
     self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
 //    NSURL *movieUrl=[NSURL URLWithString:@"http://117.139.19.79/sohu/v1/TmkiTmwd0EI2PFy7eE14M86XNAeFqL8bWVCRgTAF5m47fFoGRMNiNw.mp4?k=aCoUTp&p=XZxIWhoBoJ2svm1BqVPcNmsdytP&r=TmI20LscWOo70Sc2ZD6Sqt8IS3eslDbJkDbtZ5Nak7gaUDQEwah0whesaOGECBfjvJAt6ODOfoIWFe4vmXAyBj&q=OpCAhW7IRYodRDvswmfCyY2sWhyHfhWt5GN45GAOvmbcWJbtfGNOWBeSqD24RhoUZDJ&cip=117.136.64.93"];
     self.moviePlayer=[[MPMoviePlayerController alloc]initWithContentURL:movieUrl];

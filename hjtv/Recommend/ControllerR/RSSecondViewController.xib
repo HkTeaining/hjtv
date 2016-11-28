@@ -22,8 +22,8 @@
                         <constraint firstAttribute="width" constant="320" id="P2L-Zr-D9k"/>
                     </constraints>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Nr7-Zb-ilm"/>
-                        <outlet property="delegate" destination="-1" id="a9o-RN-xEi"/>
+                        <outlet property="dataSource" destination="-1" id="cnc-G6-JGq"/>
+                        <outlet property="delegate" destination="-1" id="DD6-uw-zpA"/>
                     </connections>
                 </tableView>
             </subviews>

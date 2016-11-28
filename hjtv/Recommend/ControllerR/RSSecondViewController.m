@@ -17,16 +17,24 @@
 @end
 
 @implementation RSSecondViewController
-
+//1 1 x x 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.myTab registerNib:[UINib nibWithNibName:@"XqTableViewCell" bundle:nil] forCellReuseIdentifier:@"cellR"];
-    [self getModelData];
-  
+//      [self getModelData];
+}
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:YES];
+//     [self setBtn];
+//////}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
 }
 -(void)getModelData
 {
-    [NetRequestClass getHjVideoInfoForRequestUrl:firstUrlInfo WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
+    [NetRequestClass getHjVideoInfoForRequestUrl:[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/series/detailV3?&sid=%@",[self.recivceThreeArray[self.selectThreeRow] objectForKey:@"sid"]] WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
         self.seriesArray=returnValue2;
          HjInfoSeries *ins=(HjInfoSeries *)self.seriesArray[0];
         UIWebView *web=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 330)];
@@ -40,6 +48,8 @@
         }
         [web loadHTMLString:ins.intro baseURL:nil];
         self.myTab.tableHeaderView=web;
+        self.myTab.delegate=self;
+        self.myTab.dataSource=self;
     }];
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -61,6 +71,7 @@
 {
   return 80;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
 
@@ -81,6 +92,7 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    [self getModelData];
     return 1;
 }
 @end

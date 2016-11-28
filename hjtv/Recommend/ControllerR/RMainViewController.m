@@ -9,6 +9,7 @@
 #import "RMainViewController.h"
 #import "RFirstViewController.h"
 #import "RSecondViewController.h"
+#import "SearchTwoViewController.h"
 
 @interface RMainViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *hjbtn;
@@ -23,6 +24,12 @@
 @end
 
 @implementation RMainViewController
+- (IBAction)search:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SearchTwoViewController" bundle:nil];
+    SearchTwoViewController *searchTwoVC = [sb instantiateViewControllerWithIdentifier:@"SearchTwoViewController"];
+    [self presentViewController:searchTwoVC animated:YES completion:nil];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setLine];
@@ -109,3 +116,4 @@
     }
 }
 @end
+//1 1 1 x x x

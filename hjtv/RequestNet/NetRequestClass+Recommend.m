@@ -80,5 +80,35 @@
         NSLog(@"失败");
     }];
 }
++(void)getStarDetailInfoForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block
+{
+    [self NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
+        NSMutableArray *listAy=[NSMutableArray new];
+        StarVideoDy *list=[StarVideoDy objectWithKeyValues:returnValue];
+        for (StarVideoDyInfo *info in list.videos) {
+            [listAy addObject:info];
+        }
+        block(listAy);
+    } WithErrorCodeBlock:^(id errorCode) {
+        NSLog(@"%@",errorCode);
+    } WithFailureBlock:^{
+        NSLog(@"失败");
+    }];
+}
++(void)getMoreInfoForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block
+{
+    [self NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
+        NSMutableArray *listAy=[NSMutableArray new];
+        StarVideoList *list=[StarVideoList objectWithKeyValues:returnValue];
+        for (StarVideoInfo *info in list.hotStars) {
+            [listAy addObject:info];
+        }
+        block(listAy);
+    } WithErrorCodeBlock:^(id errorCode) {
+        NSLog(@"%@",errorCode);
+    } WithFailureBlock:^{
+        NSLog(@"失败");
+    }];
+}
 
 @end

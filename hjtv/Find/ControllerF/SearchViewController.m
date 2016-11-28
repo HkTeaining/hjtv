@@ -10,8 +10,11 @@
 #import "VarietyViewController.h"
 #import "MovieViewController.h"
 #import "ForumViewController.h"
-@interface SearchViewController ()
+#import "SearchTwoViewController.h"
+#import "ForumTableViewController.h"
+@interface SearchViewController ()<UISearchBarDelegate>
 @property(nonatomic,strong)UIButton *varietyButton,*movieButton,*forumButton;
+@property(nonatomic,strong)UISearchBar *search;
 
 @end
 
@@ -20,13 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UISearchBar *search=[[UISearchBar alloc]initWithFrame:CGRectMake(20,0,280,40)];
-    search.placeholder = @"请输入剧名";
-    self.navigationItem.titleView=search;
+    
+    self.search=[[UISearchBar alloc]initWithFrame:CGRectMake(20,0,280,40)];
+    self.search.placeholder = @"请输入剧名";
+    self.navigationItem.titleView=self.search;
+    self.search.delegate = self;
     [self varietyButton];
     [self movieButton];
     [self forumButton];
     [self initView];
+    
     
 }
 #pragma mark - initView
@@ -73,14 +79,28 @@
 }
 
 - (void)goToMovie {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"" bundle:nil];
-    MovieViewController *movieVC = [sb instantiateViewControllerWithIdentifier:@""];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MovieViewController" bundle:nil];
+    MovieViewController *movieVC = [sb instantiateViewControllerWithIdentifier:@"movie"];
     [self.navigationController pushViewController:movieVC animated:YES];
     
 }
 
 - (void)goToForum {
-    ForumViewController *forumVC = [ForumViewController new];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ForumViewController" bundle:nil];
+    ForumTableViewController *forumVC = [sb instantiateViewControllerWithIdentifier:@"forum"];
     [self.navigationController pushViewController:forumVC animated:YES];
 }
+-(void)goToSearch{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SearchTwoViewController" bundle:nil];
+    SearchTwoViewController *searchTwoVC = [sb instantiateViewControllerWithIdentifier:@"SearchTwoViewController"];
+    [self presentViewController:searchTwoVC animated:YES completion:nil];
+    
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [self goToSearch];
+}
+
+
+
+
 @end

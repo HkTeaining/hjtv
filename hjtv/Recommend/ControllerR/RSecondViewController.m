@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self addHeader];
+    [self addFooter];
     [self getModelData];
     [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewTwoCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdtwo"];
     [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewThreeCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdthree"];
@@ -156,6 +158,14 @@
     }
     
 }
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    selectRow=indexPath.row;
+//    RDetailViewController *rdetail=[[RDetailViewController alloc]init];
+//    rdetail.recivceArray=self.listArray;
+//    rdetail.selectRow=selectRow;
+//    [self.navigationController pushViewController:rdetail animated:YES];
+//}
 - (void)singleTap:(UITapGestureRecognizer *)tap {
     StarDetailViewController *rdetail=[[StarDetailViewController alloc]init];
     [self.navigationController pushViewController:rdetail animated:YES];
@@ -167,4 +177,31 @@
     RPlayViewController *rdetail=[[RPlayViewController alloc]init];
     [self.navigationController pushViewController:rdetail animated:YES];
 }
+- (void)addHeader
+{
+    __unsafe_unretained typeof(self) vc = self;
+    [self.myColOne addHeaderWithCallback:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [vc.myColOne reloadData];
+            [vc.myColOne headerEndRefreshing];
+        });
+    }];
+}
+int rowCount=30;
+- (void)addFooter
+{
+    __unsafe_unretained typeof(self) vc = self;
+    [self.myColOne addFooterWithCallback:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            rowCount=rowCount+30;
+            NSString *url=[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/star/hotVideos?_ts=1479963052395&count=%d&offset=0",rowCount];
+            [NetRequestClass getStarDyVideoListForRequestUrl:url  WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
+                vc.starDyArray=returnValue;
+                [vc.myColOne reloadData];
+                [vc.myColOne headerEndRefreshing];
+            }];
+        });
+    }];
+}
 @end
+//1 1 1 x x x

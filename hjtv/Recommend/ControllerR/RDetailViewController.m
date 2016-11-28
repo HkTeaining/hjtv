@@ -41,6 +41,7 @@
 @end
 
 @implementation RDetailViewController
+//1 1 x x
 dispatch_semaphore_t sema;
 - (IBAction)tlbtn:(id)sender {
     self.sc.contentOffset=CGPointMake(640, 0);
@@ -64,12 +65,13 @@ dispatch_semaphore_t sema;
 }
 -(void)getModelData
 {
-   [NetRequestClass getHjVideoInfoForRequestUrl:firstUrlInfo WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
+   [NetRequestClass getHjVideoInfoForRequestUrl:[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/series/detailV3?&sid=%@",[self.recivceArray[self.selectRow] objectForKey:@"sid"]] WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
        self.seriesArray=returnValue2;
        self.playArray=returnValue1;
        NSLog(@"%@--%d----%@--%@",self.seriesArray,self.seriesArray.count,self.seriesArray[0],self.playArray);
        [self setInfo];
        [self setNavigation];
+           [self setSc];
    }];
 }
 -(void)setInfo
@@ -95,13 +97,14 @@ dispatch_semaphore_t sema;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setLine];
-    [self setSc];
+//1 2 x x[self setSc];//1 //2 x x; x ;x;
     [self getModelData];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.backgroundColor=[UIColor colorWithRed:234 green:212 blue:185 alpha:1];
+    self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:234 green:212 blue:185 alpha:1];
 }
 -(void)setNavigation
 {
@@ -120,11 +123,17 @@ dispatch_semaphore_t sema;
     self.sc.showsHorizontalScrollIndicator = NO;
     self.sc.pagingEnabled = YES;
     self.firstVC = [[RSFirstViewController alloc] init];
+    self.firstVC.recivceTwoArray=self.recivceArray;
+    self.firstVC.selectTwoRow=self.selectRow;
+//     self.firstVC.recivceTwoArray=self.seriesArray;;
     [self.firstVC.view setFrame:CGRectMake(0,0, 320, 216-49)];
     [self addChildViewController:self.firstVC];
     [self.sc addSubview:self.firstVC.view];
     self.secondVC = [[RSSecondViewController alloc] init];
     [self.secondVC.view setFrame:CGRectMake(320, 0, 320, 216-49)];
+    self.secondVC.recivceThreeArray=self.recivceArray;
+//    self.secondVC.recivceThreeArray=self.seriesArray;;
+    self.secondVC.selectThreeRow=self.selectRow;
     [self addChildViewController:self.secondVC];
     [self.sc addSubview:self.secondVC.view];
     self.threeVC = [[RSThreeViewController alloc] init];

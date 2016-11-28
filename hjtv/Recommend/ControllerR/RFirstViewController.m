@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addHeader];
+    [self addFooter];
     [self setColLayout];
     [self getModelData];
 }
@@ -50,15 +52,16 @@
     
 }
 //1(x) 1(x) 1/1/(x) 1/1/(x) x x x x
+int selectRow;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId=@"cellId";
     RCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     UIImageView *im=(UIImageView *)[cell viewWithTag:100];
     [im sd_setImageWithURL:[NSURL URLWithString:[self.listArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
-    [im addGestureRecognizer:singleTap];
-    im.userInteractionEnabled=YES;
+//    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+//    [im addGestureRecognizer:singleTap];
+//    im.userInteractionEnabled=YES;
     UILabel *la0=(UILabel *)[cell viewWithTag:200];
     if ([[self.listArray[indexPath.row] objectForKey:@"isFinished"]boolValue]) {
     la0.text=[NSString stringWithFormat:@"%d集全",[[self.listArray[indexPath.row] objectForKey:@"count"]intValue]];
@@ -81,8 +84,43 @@
     cell.backgroundColor=[UIColor whiteColor];
     return cell;
 }
-- (void)singleTap:(UITapGestureRecognizer *)tap {
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    selectRow=indexPath.row;
     RDetailViewController *rdetail=[[RDetailViewController alloc]init];
+    rdetail.recivceArray=self.listArray;
+    rdetail.selectRow=selectRow;
     [self.navigationController pushViewController:rdetail animated:YES];
 }
+//- (void)singleTap:(UITapGestureRecognizer *)tap {
+//
+//}
+- (void)addHeader
+{
+    __unsafe_unretained typeof(self) vc = self;
+    [self.myCollec addHeaderWithCallback:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [vc.myCollec reloadData];
+            [vc.myCollec headerEndRefreshing];
+        });
+    }];
+}
+int rowCountOne=60;
+- (void)addFooter
+{
+    __unsafe_unretained typeof(self) vc = self;
+    [self.myCollec addFooterWithCallback:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            rowCountOne=rowCountOne+30;
+            NSString *url=[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/series/indexV2?_ts=1479963005307&count=%d&offset=0",rowCountOne];
+            [NetRequestClass getHjVideoListForRequestUrl:url  WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
+                vc.listArray=returnValue;
+                [vc.myCollec reloadData];
+                [vc.myCollec headerEndRefreshing];
+            }];
+        });
+    }];
+}
 @end
+//1 1 1 x x x

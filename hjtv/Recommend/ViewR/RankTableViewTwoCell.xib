@@ -13,25 +13,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpW-7f-gZN">
-                        <rect key="frame" x="8" y="39" width="10" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpW-7f-gZN">
+                        <rect key="frame" x="5" y="37" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="10" id="5JS-jy-mNe"/>
-                            <constraint firstAttribute="height" constant="10" id="tzf-M3-Urm"/>
+                            <constraint firstAttribute="width" constant="15" id="5JS-jy-mNe"/>
+                            <constraint firstAttribute="height" constant="15" id="tzf-M3-Urm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="iZH-Eo-dEE">
-                        <rect key="frame" x="30" y="24" width="40" height="40"/>
+                        <rect key="frame" x="35" y="24" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Xh2-jo-LPZ"/>
                             <constraint firstAttribute="width" constant="40" id="vcw-ZI-84T"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小花" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-1V-WQ9">
-                        <rect key="frame" x="90" y="25" width="60" height="20"/>
+                        <rect key="frame" x="95" y="25" width="60" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="cak-7Y-ko2"/>
                             <constraint firstAttribute="width" constant="60" id="dUl-GG-eQ3"/>
@@ -40,8 +40,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝数:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bc-8w-Yei">
-                        <rect key="frame" x="90" y="53" width="40" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝数:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bc-8w-Yei">
+                        <rect key="frame" x="95" y="53" width="40" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Vew-r1-6cb"/>
                             <constraint firstAttribute="height" constant="10" id="oyr-q5-Gn4"/>
@@ -50,8 +50,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="500" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.1万" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAg-ii-4T0">
-                        <rect key="frame" x="135" y="52" width="60" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.1万" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAg-ii-4T0">
+                        <rect key="frame" x="140" y="52" width="60" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="OS0-3U-L4a"/>
                             <constraint firstAttribute="width" constant="60" id="PTc-tN-IwT"/>

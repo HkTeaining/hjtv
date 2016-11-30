@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="1GY-a8-5x7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Sx-Yc-n5t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XE6-M8-F2X">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XE6-M8-F2X">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="36c-RN-WSD">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -27,8 +27,13 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XE6-M8-F2X" firstAttribute="top" secondItem="1Sx-Yc-n5t" secondAttribute="top" id="ZyW-30-K43"/>
+                            <constraint firstItem="XE6-M8-F2X" firstAttribute="leading" secondItem="1Sx-Yc-n5t" secondAttribute="leading" id="jUH-O9-RxY"/>
+                            <constraint firstAttribute="trailing" secondItem="XE6-M8-F2X" secondAttribute="trailing" id="rO5-Od-Kbs"/>
+                            <constraint firstItem="1GY-a8-5x7" firstAttribute="top" secondItem="XE6-M8-F2X" secondAttribute="bottom" id="yrj-WX-S3z"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="myCollectionOne" destination="XE6-M8-F2X" id="7Zl-7x-0wD"/>
                     </connections>

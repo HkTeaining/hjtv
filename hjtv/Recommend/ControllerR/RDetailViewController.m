@@ -44,11 +44,11 @@
 //1 1 x x
 dispatch_semaphore_t sema;
 - (IBAction)tlbtn:(id)sender {
-    self.sc.contentOffset=CGPointMake(640, 0);
+    self.sc.contentOffset=CGPointMake(2*[UIScreen mainScreen].bounds.size.width, 0);
     [self setLine:@"tlq"];
 }
 - (IBAction)xqbtn:(id)sender {
-    self.sc.contentOffset=CGPointMake(320, 0);
+    self.sc.contentOffset=CGPointMake([UIScreen mainScreen].bounds.size.width, 0);
      [self setLine:@"xq"];
 }
 - (IBAction)jubtn:(id)sender {
@@ -58,8 +58,10 @@ dispatch_semaphore_t sema;
 - (IBAction)play:(id)sender {
     RPlayViewController *play=[[RPlayViewController alloc]init];
     play.url=[self.playArray[0] objectForKey:@"srcUrl"];
-//    [self presentViewController:play animated:YES completion:nil];
-    [self.navigationController pushViewController:play animated:YES];
+    play.Jurl=[self.recivceArray[self.selectRow] objectForKey:@"name"];
+    play.Jcount=0;
+    [self presentViewController:play animated:YES completion:nil];
+//    [self.navigationController pushViewController:play animated:YES];
 }
 - (IBAction)hc:(id)sender {
 }
@@ -68,10 +70,10 @@ dispatch_semaphore_t sema;
    [NetRequestClass getHjVideoInfoForRequestUrl:[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/series/detailV3?&sid=%@",[self.recivceArray[self.selectRow] objectForKey:@"sid"]] WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
        self.seriesArray=returnValue2;
        self.playArray=returnValue1;
-       NSLog(@"%@--%d----%@--%@",self.seriesArray,self.seriesArray.count,self.seriesArray[0],self.playArray);
+//       NSLog(@"%@--%d----%@--%@",self.seriesArray,self.seriesArray.count,self.seriesArray[0],self.playArray);
        [self setInfo];
        [self setNavigation];
-           [self setSc];
+        [self setSc];
    }];
 }
 -(void)setInfo
@@ -84,12 +86,12 @@ dispatch_semaphore_t sema;
     self.rank.textColor=[UIColor orangeColor];
     self.ly.text=ins.source;
     if (ins.isFinished) {
-        self.js.text=[NSString stringWithFormat:@"%d集全",ins.count];
+        self.js.text=[NSString stringWithFormat:@"%u集全",ins.count];
         self.js.font=[UIFont systemFontOfSize:12];
         self.js.textColor=[UIColor greenColor];
     }else
     {
-         self.js.text=[NSString stringWithFormat:@"更新到第%d集",ins.count];
+         self.js.text=[NSString stringWithFormat:@"更新到第%u集",ins.count];
          self.js.font=[UIFont systemFontOfSize:12];
          self.js.textColor=[UIColor greenColor];
     }
@@ -115,39 +117,86 @@ dispatch_semaphore_t sema;
 }
 -(void)setSc
 {
+//    self.sc.backgroundColor = [UIColor whiteColor];
+//    self.sc.bounces=NO;
+//    self.sc.delegate=self;
+//    self.sc.contentSize = CGSizeMake(960, 216-49);
+//    self.sc.showsVerticalScrollIndicator = NO;
+//    self.sc.showsHorizontalScrollIndicator = NO;
+//    self.sc.pagingEnabled = YES;
+//    self.firstVC = [[RSFirstViewController alloc] init];
+//    self.firstVC.recivceTwoArray=self.recivceArray;
+//    self.firstVC.selectTwoRow=self.selectRow;
+////     self.firstVC.recivceTwoArray=self.seriesArray;;
+//    [self.firstVC.view setFrame:CGRectMake(0,0, 320, 216-49)];
+//    [self addChildViewController:self.firstVC];
+//    [self.sc addSubview:self.firstVC.view];
+//    self.secondVC = [[RSSecondViewController alloc] init];
+//    [self.secondVC.view setFrame:CGRectMake(320, 0, 320, 216-49)];
+//    self.secondVC.recivceThreeArray=self.recivceArray;
+////    self.secondVC.recivceThreeArray=self.seriesArray;;
+//    self.secondVC.selectThreeRow=self.selectRow;
+//    [self addChildViewController:self.secondVC];
+//    [self.sc addSubview:self.secondVC.view];
+//    self.threeVC = [[RSThreeViewController alloc] init];
+//    [self.threeVC.view setFrame:CGRectMake(640, 0, 320, 216-49)];
+//    [self addChildViewController:self.threeVC];
+//    [self.sc addSubview:self.threeVC.view];
+//    self.currentVC = self.firstVC;
     self.sc.backgroundColor = [UIColor whiteColor];
     self.sc.bounces=NO;
     self.sc.delegate=self;
-    self.sc.contentSize = CGSizeMake(960, 216-49);
     self.sc.showsVerticalScrollIndicator = NO;
     self.sc.showsHorizontalScrollIndicator = NO;
     self.sc.pagingEnabled = YES;
     self.firstVC = [[RSFirstViewController alloc] init];
     self.firstVC.recivceTwoArray=self.recivceArray;
     self.firstVC.selectTwoRow=self.selectRow;
-//     self.firstVC.recivceTwoArray=self.seriesArray;;
-    [self.firstVC.view setFrame:CGRectMake(0,0, 320, 216-49)];
     [self addChildViewController:self.firstVC];
     [self.sc addSubview:self.firstVC.view];
+    [self.firstVC.view  mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width);
+          //这里scrolview height尺寸问题
+        make.height.mas_equalTo([UIScreen mainScreen].bounds.size.height-260-65);
+        make.left.equalTo(self.sc.mas_left).offset(0);
+        make.right.equalTo(self.sc.mas_right).offset(-2*[UIScreen mainScreen].bounds.size.width);
+        make.bottom.equalTo(self.sc.mas_bottom).offset(0);
+        make.top.equalTo(self.sc.mas_top).offset(0);
+    }];
     self.secondVC = [[RSSecondViewController alloc] init];
-    [self.secondVC.view setFrame:CGRectMake(320, 0, 320, 216-49)];
     self.secondVC.recivceThreeArray=self.recivceArray;
-//    self.secondVC.recivceThreeArray=self.seriesArray;;
     self.secondVC.selectThreeRow=self.selectRow;
     [self addChildViewController:self.secondVC];
     [self.sc addSubview:self.secondVC.view];
+    [self.secondVC.view makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo([UIScreen mainScreen].bounds.size.width);
+        //这里scrolview height尺寸问题
+        make.height.equalTo([UIScreen mainScreen].bounds.size.height-260-65);
+        make.left.equalTo(self.firstVC.view.mas_right).offset(0);
+        make.right.equalTo(self.sc.mas_right).offset(-[UIScreen mainScreen].bounds.size.width);
+        make.bottom.equalTo(self.sc.mas_bottom).offset(0);
+        make.top.equalTo(self.sc.mas_top).offset(0);
+    }];
     self.threeVC = [[RSThreeViewController alloc] init];
-    [self.threeVC.view setFrame:CGRectMake(640, 0, 320, 216-49)];
     [self addChildViewController:self.threeVC];
     [self.sc addSubview:self.threeVC.view];
+    [self.threeVC.view makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo([UIScreen mainScreen].bounds.size.width);
+          //这里scrolview height尺寸问题
+        make.height.equalTo([UIScreen mainScreen].bounds.size.height-260-65);
+        make.left.equalTo(self.secondVC.view.mas_right).offset(0);
+        make.right.equalTo(self.sc.mas_right).offset(0);
+        make.bottom.equalTo(self.sc.mas_bottom).offset(0);
+        make.top.equalTo(self.sc.mas_top).offset(0);
+    }];
     self.currentVC = self.firstVC;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    if (scrollView.contentOffset.x>600) {
+    if (scrollView.contentOffset.x>2*[UIScreen mainScreen].bounds.size.width-100) {
         [self setLine:@"tlq"];
     }else
     {
-   if (scrollView.contentOffset.x>300) {
+   if (scrollView.contentOffset.x>[UIScreen mainScreen].bounds.size.width-100) {
             [self setLine:@"xq"];
         }else
         {
@@ -167,7 +216,8 @@ dispatch_semaphore_t sema;
         self.viewLine.frame=CGRectMake(self.jq.frame.origin.x, self.jq.frame.origin.y+30, 50, 2);
     }else if([str isEqualToString:@"xq"])
     {
-        self.viewLine.frame=CGRectMake(self.xq.frame.origin.x, self.xq.frame.origin.y+30, 50, 2);
+//        self.viewLine.frame=CGRectMake(self.xq.frame.origin.x, self.xq.frame.origin.y+30, 50, 2);
+         self.viewLine.frame=CGRectMake(self.xq.frame.origin.x+25, self.xq.frame.origin.y+30, 50, 2);
     }else
     {
      self.viewLine.frame=CGRectMake(self.tlq.frame.origin.x, self.tlq.frame.origin.y+30, 50, 2);
@@ -184,6 +234,10 @@ dispatch_semaphore_t sema;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

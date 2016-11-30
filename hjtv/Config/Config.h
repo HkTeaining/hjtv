@@ -6,8 +6,8 @@
 //  Copyright (c) 2016年 . All rights reserved.
 //
 
-#ifndef MVVMTest_Config_h
-#define MVVMTest_Config_h
+#ifndef hjtv_Config_h
+#define hjtv_Config_h
 
 //定义返回请求数据的block类型
 typedef void (^ReturnValueBlock) (id returnValue);

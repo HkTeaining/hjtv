@@ -54,34 +54,69 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
     self.viewLine.frame=CGRectMake(self.mxbtn.frame.origin.x+10, self.mxbtn.frame.origin.y+25, 40, 2);
-    self.sc.contentOffset=CGPointMake(320, 0);
+    self.sc.contentOffset=CGPointMake([UIScreen mainScreen].bounds.size.width, 0);
     [UIView commitAnimations];
 //    [self replaceController:self.currentVC newController:self.secondVC];
 }
 -(void)setSc
 {
-    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64,320,416-49)];
-    self.sc.backgroundColor = [UIColor whiteColor];
+//    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64,320,416-49)];
+//    self.sc.backgroundColor = [UIColor whiteColor];
+//    self.sc.bounces=NO;
+//    self.sc.delegate = self;
+//    self.firstVC = [[RFirstViewController alloc] init];
+//    [self.firstVC.view setFrame:CGRectMake(0,0, 320, 416-49)];
+//    [self addChildViewController:self.firstVC];
+//    [self.sc addSubview:self.firstVC.view];
+//    self.secondVC = [[RSecondViewController alloc] init];
+//    [self.secondVC.view setFrame:CGRectMake(320, 0, 320, 416-49)];
+//    [self addChildViewController:self.secondVC];
+//    [self.sc addSubview:self.secondVC.view];
+//    self.currentVC = self.firstVC;
+//    self.sc.contentSize = CGSizeMake(640, 416-49);
+//    self.sc.showsVerticalScrollIndicator = NO;
+//    self.sc.showsHorizontalScrollIndicator = NO;
+//    //sc.contentOffset = CGPointMake(200, 0);
+//    self.sc.pagingEnabled = YES;
+//    [self.view addSubview:self.sc];
+    self.sc=[[UIScrollView alloc]init];
+    [self.view addSubview:self.sc];
+    self.sc.backgroundColor=[UIColor whiteColor];
     self.sc.bounces=NO;
-    self.sc.delegate = self;
-    self.firstVC = [[RFirstViewController alloc] init];
-    [self.firstVC.view setFrame:CGRectMake(0,0, 320, 416-49)];
+    self.sc.pagingEnabled = YES;
+    self.sc.showsHorizontalScrollIndicator = NO;
+    self.sc.delegate=self;
+    [self.sc makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.top.equalTo(self.view.mas_top).offset(64);
+        make.height.mas_equalTo([UIScreen mainScreen].bounds.size.height-49-64);
+    }];
+    self.firstVC=[[RFirstViewController alloc] init];
     [self addChildViewController:self.firstVC];
     [self.sc addSubview:self.firstVC.view];
-    self.secondVC = [[RSecondViewController alloc] init];
-    [self.secondVC.view setFrame:CGRectMake(320, 0, 320, 416-49)];
-    [self addChildViewController:self.secondVC];
+    [self.firstVC.view  mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width);
+        make.height.mas_equalTo([UIScreen mainScreen].bounds.size.height-49-64);
+        make.left.equalTo(self.sc.mas_left).offset(0);
+        make.right.equalTo(self.sc.mas_right).offset(-[UIScreen mainScreen].bounds.size.width);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-49);
+        make.top.equalTo(self.view.mas_top).offset(64);
+    }];
+    self.secondVC=[[RSecondViewController alloc]init];
     [self.sc addSubview:self.secondVC.view];
-    self.currentVC = self.firstVC;
-    self.sc.contentSize = CGSizeMake(640, 416-49);
-    self.sc.showsVerticalScrollIndicator = NO;
-    self.sc.showsHorizontalScrollIndicator = NO;
-    //sc.contentOffset = CGPointMake(200, 0);
-    self.sc.pagingEnabled = YES;
-    [self.view addSubview:self.sc];
+    [self addChildViewController:self.secondVC];
+    [self.secondVC.view makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo([UIScreen mainScreen].bounds.size.width);
+        make.height.equalTo([UIScreen mainScreen].bounds.size.height-49-64);
+        make.left.equalTo(self.secondVC.view.mas_left).offset(0);
+        make.right.equalTo(self.sc.mas_right).offset(0);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-49);
+        make.top.equalTo(self.view.mas_top).offset(64);
+    }];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    if (scrollView.contentOffset.x>300) {
+    if (scrollView.contentOffset.x>[UIScreen mainScreen].bounds.size.width-100) {
         [self setLine:@"mxbtn"];
     }else
     {

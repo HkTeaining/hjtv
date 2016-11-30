@@ -44,6 +44,7 @@ dispatch_semaphore_t sema1;
         self.myTabView.delegate=self;
         self.myTabView.dataSource=self;//1 1 x x
 //        dispatch_semaphore_signal(sema1);
+        [self.myTabView reloadData];
     }];
 //    dispatch_semaphore_wait(sema1, DISPATCH_TIME_FOREVER);
 //    vc.myTabView.delegate=self;
@@ -65,7 +66,7 @@ if(indexPath.row==0)
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 50;
+    return self.moreinfo.count-2;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -100,17 +101,17 @@ if(indexPath.row==0)
 //        }else
 //        {
             RankTableViewTwoCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cellrank2" forIndexPath:indexPath];
-//            UILabel *la1=(UILabel *)[cell viewWithTag:100];
-//            la1.text=[self.moreinfo[indexPath.row+2] objectForKey:@"rank"];
-//            UIImageView *im1=(UIImageView *)[cell viewWithTag:200];
-//            [im1 sd_setImageWithURL:[NSURL URLWithString:[self.moreinfo[indexPath.row+2] objectForKey:@"thumb"]] placeholderImage:nil];
-//            UILabel *la2=(UILabel *)[cell viewWithTag:300];
-//            la2.text=[self.moreinfo[indexPath.row+2] objectForKey:@"name"];
-//            UILabel *la3=(UILabel *)[cell viewWithTag:400];
-//            la3.text=[NSString stringWithFormat:@"%.1f万",[[self.moreinfo[indexPath.row+2] objectForKey:@"fansCount"] floatValue]/10000];
+            UILabel *la1=(UILabel *)[cell viewWithTag:100];
+           //注意nscnumber.....错误
+            la1.text=[NSString stringWithFormat:@"%@",[self.moreinfo[indexPath.row+2] objectForKey:@"rank"]];
+            UIImageView *im1=(UIImageView *)[cell viewWithTag:200];
+            [im1 sd_setImageWithURL:[NSURL URLWithString:[self.moreinfo[indexPath.row+2] objectForKey:@"thumb"]] placeholderImage:nil];
+            UILabel *la2=(UILabel *)[cell viewWithTag:300];
+            la2.text=[self.moreinfo[indexPath.row+2] objectForKey:@"name"];
+            UILabel *la3=(UILabel *)[cell viewWithTag:400];
+            la3.text=[NSString stringWithFormat:@"%.1f万",[[self.moreinfo[indexPath.row+2] objectForKey:@"fansCount"] floatValue]/10000];
             return cell;
-//        }
-    }
+}
 }
 - (void)addHeader
 {
@@ -128,7 +129,7 @@ int rowCountTwo=30;
     __unsafe_unretained typeof(self) vc = self;
     [self.myTabView addFooterWithCallback:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            rowCountTwo=rowCountTwo+30;
+            rowCountTwo=rowCountTwo+100;
             NSString *url=[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/star/hotStars?_ts=1480301943418&count=%d&offset=0",rowCountTwo];
             [NetRequestClass getHjVideoListForRequestUrl:url  WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
                 vc.moreinfo=returnValue;

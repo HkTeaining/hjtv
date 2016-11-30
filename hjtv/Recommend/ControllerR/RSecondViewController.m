@@ -28,19 +28,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self addHeader];
-    [self addFooter];
-    [self getModelData];
-    [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewTwoCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdtwo"];
-    [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewThreeCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdthree"];
-    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize=CGSizeMake(60, 70);
-    flowLayout.minimumLineSpacing=15;
-    flowLayout.minimumInteritemSpacing=15;
-    flowLayout.sectionInset=UIEdgeInsetsMake(10,10, 0, 10);
-    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
-    self.myColOne.collectionViewLayout=flowLayout;
-    self.myColOne.backgroundColor=[UIColor whiteColor];
+//    [self addHeader];
+//    [self addFooter];
+//    [self getModelData];
+//    [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewTwoCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdtwo"];
+//    [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewThreeCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdthree"];
+//    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
+//    flowLayout.itemSize=CGSizeMake(60, 70);
+//    flowLayout.minimumLineSpacing=15;
+//    flowLayout.minimumInteritemSpacing=15;
+//    flowLayout.sectionInset=UIEdgeInsetsMake(10,10, 0, 10);
+//    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+//    self.myColOne.collectionViewLayout=flowLayout;
+//    self.myColOne.backgroundColor=[UIColor whiteColor];
+        [self addHeader];
+        [self addFooter];
+        [self getModelData];
+        [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewTwoCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdtwo"];
+        [self.myColOne registerNib:[UINib nibWithNibName:@"RCollectionViewThreeCell" bundle:nil]  forCellWithReuseIdentifier:@"cellIdthree"];
+        UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
+        flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+        self.myColOne.collectionViewLayout=flowLayout;
+        self.myColOne.backgroundColor=[UIColor whiteColor];
 }
 -(void)getModelData
 {
@@ -81,15 +90,18 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(320, 30);
+//    return CGSizeMake(320, 30);
+    return  CGSizeMake([UIScreen mainScreen].bounds.size.width,30);
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-       return CGSizeMake(60, 70);
+//       return CGSizeMake(60, 70);
+        return CGSizeMake(([UIScreen mainScreen].bounds.size.width-40)/4.0, 70);
     }else
     {
-       return CGSizeMake(140, 130);
+//       return CGSizeMake(140, 130);
+        return CGSizeMake(([UIScreen mainScreen].bounds.size.width-40)/2.0, 130);
     }
 
 }
@@ -175,7 +187,9 @@
 }
 - (void)singleTapThree:(UITapGestureRecognizer *)tap {
     RPlayViewController *rdetail=[[RPlayViewController alloc]init];
-    [self.navigationController pushViewController:rdetail animated:YES];
+//    [self.navigationController pushViewController:rdetail animated:YES];
+    [self presentViewController:rdetail animated:YES completion:nil];
+
 }
 - (void)addHeader
 {
@@ -193,7 +207,7 @@ int rowCount=30;
     __unsafe_unretained typeof(self) vc = self;
     [self.myColOne addFooterWithCallback:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            rowCount=rowCount+30;
+            rowCount=rowCount+100;
             NSString *url=[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/star/hotVideos?_ts=1479963052395&count=%d&offset=0",rowCount];
             [NetRequestClass getStarDyVideoListForRequestUrl:url  WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
                 vc.starDyArray=returnValue;

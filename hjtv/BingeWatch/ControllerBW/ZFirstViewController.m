@@ -8,7 +8,7 @@
 
 #import "ZFirstViewController.h"
 
-@interface ZFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ZFirstViewController ()
 
 @end
 

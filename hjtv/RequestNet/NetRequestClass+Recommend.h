@@ -15,5 +15,5 @@
 +(void)getHjVideoInfoForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueKuBlock) block;
 +(void)getStarDetailInfoForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block;
 +(void)getMoreInfoForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block;
-
++(void)getSearchForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block;
 @end

@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="P9x-RM-rli"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UPp-vE-mkA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-VI-nRG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-VI-nRG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="izQ-Cp-74Q">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -27,8 +27,13 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gh2-VI-nRG" secondAttribute="trailing" id="PHW-7Y-mv2"/>
+                            <constraint firstItem="Gh2-VI-nRG" firstAttribute="top" secondItem="UPp-vE-mkA" secondAttribute="top" id="QE0-Bl-Tu3"/>
+                            <constraint firstItem="P9x-RM-rli" firstAttribute="top" secondItem="Gh2-VI-nRG" secondAttribute="bottom" id="ToS-nz-Itx"/>
+                            <constraint firstItem="Gh2-VI-nRG" firstAttribute="leading" secondItem="UPp-vE-mkA" secondAttribute="leading" id="oAn-32-NaG"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="myCollection" destination="Gh2-VI-nRG" id="cL9-Vh-aB8"/>
                     </connections>

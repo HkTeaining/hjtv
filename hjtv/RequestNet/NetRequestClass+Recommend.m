@@ -110,5 +110,19 @@
         NSLog(@"失败");
     }];
 }
-
++(void)getSearchForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block
+{
+    [self NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
+        NSMutableArray *listAy=[NSMutableArray new];
+        HjInfo *list=[HjInfo objectWithKeyValues:returnValue];
+        for (HjInfoPlayInfo *info in list.seriesList) {
+            [listAy addObject:info];
+        }
+        block(listAy);
+    } WithErrorCodeBlock:^(id errorCode) {
+        NSLog(@"%@",errorCode);
+    } WithFailureBlock:^{
+        NSLog(@"失败");
+    }];
+}
 @end

@@ -12,11 +12,11 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="184" height="187"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" image="share_select_sms" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-mD-dKQ">
-                        <rect key="frame" x="0.0" y="0.0" width="184" height="160"/>
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" image="share_select_sms" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-mD-dKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="184" height="157"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="7.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-Wr-18U">
-                        <rect key="frame" x="164" y="148" width="20" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-Wr-18U">
+                        <rect key="frame" x="164" y="145" width="20" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="dEf-qb-cUe"/>
                             <constraint firstAttribute="width" constant="20" id="h3U-dX-kAT"/>
@@ -25,8 +25,8 @@
                         <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J78-EB-qAo">
-                        <rect key="frame" x="0.0" y="148" width="70" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J78-EB-qAo">
+                        <rect key="frame" x="0.0" y="145" width="70" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="gsT-jD-acf"/>
                             <constraint firstAttribute="width" constant="70" id="yti-6g-d2N"/>
@@ -35,8 +35,8 @@
                         <color key="textColor" red="0.31360821350000001" green="1" blue="0.24250854829999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="蓝色大海的传说" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GET-kP-czK">
-                        <rect key="frame" x="0.0" y="175" width="184" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蓝色大海的传说" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GET-kP-czK">
+                        <rect key="frame" x="0.0" y="172" width="184" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

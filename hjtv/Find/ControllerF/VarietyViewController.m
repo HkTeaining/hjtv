@@ -11,6 +11,7 @@
 #import "RDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #import "RCollectionViewCell.h"
+#import "SearchTwoViewController.h"
 
 @interface VarietyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray *mutableArry;
@@ -31,19 +32,28 @@
     [self getModelData];
 }
 -(void)search{
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SearchTwoViewController" bundle:nil];
+    SearchTwoViewController *searchTwoVC = [sb instantiateViewControllerWithIdentifier:@"SearchTwoViewController"];
+    [self presentViewController:searchTwoVC animated:YES completion:nil];
 }
 -(void)setColLayout
 {
-    [self.myCollectionOne registerNib:[UINib nibWithNibName:@"RCollectionViewCell" bundle:nil]  forCellWithReuseIdentifier:@"cellId"];
-    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize=CGSizeMake(90, 130);
-    flowLayout.minimumLineSpacing=15;
-    flowLayout.minimumInteritemSpacing=10;
-    flowLayout.sectionInset=UIEdgeInsetsMake(12,12, 0, 12);
-    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
-    self.myCollectionOne.collectionViewLayout=flowLayout;
-    self.myCollectionOne.backgroundColor=[UIColor whiteColor];
+//    [self.myCollectionOne registerNib:[UINib nibWithNibName:@"RCollectionViewCell" bundle:nil]  forCellWithReuseIdentifier:@"cellId"];
+//    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
+//    flowLayout.itemSize=CGSizeMake(90, 130);
+//    flowLayout.minimumLineSpacing=15;
+//    flowLayout.minimumInteritemSpacing=10;
+//    flowLayout.sectionInset=UIEdgeInsetsMake(12,12, 0, 12);
+//    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+//    self.myCollectionOne.collectionViewLayout=flowLayout;
+//    self.myCollectionOne.backgroundColor=[UIColor whiteColor];
+        [self.myCollectionOne registerNib:[UINib nibWithNibName:@"RCollectionViewCell" bundle:nil]  forCellWithReuseIdentifier:@"cellId"];
+        UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
+        flowLayout.itemSize=CGSizeMake(([UIScreen mainScreen].bounds.size.width-40)/3.0, 130);
+        flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+        self.myCollectionOne.collectionViewLayout=flowLayout;
+        self.myCollectionOne.backgroundColor=[UIColor whiteColor];
+
 }
 -(void)getModelData
 {

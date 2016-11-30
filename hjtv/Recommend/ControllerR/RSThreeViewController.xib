@@ -14,14 +14,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="该功能在测试阶段,仅对部分用户开启,敬请期待." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0E-cq-amp">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="该功能在测试阶段,仅对部分用户开启,敬请期待." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0E-cq-amp">
                     <rect key="frame" x="0.0" y="54" width="320" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="X0E-cq-amp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="0hG-q2-wQy"/>
+                <constraint firstItem="X0E-cq-amp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7lh-mT-6d2"/>
+                <constraint firstAttribute="trailing" secondItem="X0E-cq-amp" secondAttribute="trailing" id="Eed-N9-jAW"/>
+                <constraint firstAttribute="centerX" secondItem="X0E-cq-amp" secondAttribute="centerX" id="yrb-is-0KT"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>

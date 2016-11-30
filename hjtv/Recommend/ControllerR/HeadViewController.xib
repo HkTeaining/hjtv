@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="TA7-GL-gvh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="TA7-GL-gvh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ebo-u4-8KH">
@@ -56,7 +56,6 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsq-UK-d8x">
                     <rect key="frame" x="120" y="90" width="60" height="30"/>
-                    <color key="backgroundColor" red="0.91673519739999998" green="0.83192845390000003" blue="0.72404399669999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="KV3-Y8-ZEh"/>
                         <constraint firstAttribute="width" constant="60" id="yKA-9X-9Hx"/>
@@ -92,19 +91,27 @@
                 <constraint firstItem="g9C-zf-dQC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="6Jq-7Y-c3B"/>
                 <constraint firstItem="g9C-zf-dQC" firstAttribute="leading" secondItem="HXw-wL-3RQ" secondAttribute="trailing" constant="20" id="9Yx-2Z-fJW"/>
                 <constraint firstItem="57p-PG-XaF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="ECp-gF-fDC"/>
+                <constraint firstAttribute="trailing" secondItem="TA7-GL-gvh" secondAttribute="trailing" id="FUB-f8-eui"/>
                 <constraint firstItem="57p-PG-XaF" firstAttribute="leading" secondItem="Ebo-u4-8KH" secondAttribute="trailing" constant="20" id="HaH-JW-Yqm"/>
+                <constraint firstAttribute="bottom" secondItem="TA7-GL-gvh" secondAttribute="bottom" id="OTv-gF-HXS"/>
                 <constraint firstItem="Ebo-u4-8KH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="RhB-BB-qKC"/>
+                <constraint firstItem="TA7-GL-gvh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W4K-8s-8oN"/>
+                <constraint firstAttribute="trailing" secondItem="TA7-GL-gvh" secondAttribute="trailing" id="WrE-2h-XfS"/>
                 <constraint firstItem="rsq-UK-d8x" firstAttribute="leading" secondItem="Ebo-u4-8KH" secondAttribute="trailing" constant="20" id="YIO-Qv-rmb"/>
+                <constraint firstItem="TA7-GL-gvh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yr9-Py-f4K"/>
+                <constraint firstAttribute="bottom" secondItem="TA7-GL-gvh" secondAttribute="bottom" id="ZAy-we-pDE"/>
+                <constraint firstItem="TA7-GL-gvh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zx0-WB-Spo"/>
                 <constraint firstItem="bJg-lf-7TW" firstAttribute="leading" secondItem="Ebo-u4-8KH" secondAttribute="trailing" constant="20" id="hxX-g9-Ksq"/>
                 <constraint firstItem="bJg-lf-7TW" firstAttribute="top" secondItem="57p-PG-XaF" secondAttribute="bottom" constant="10" id="jfB-BZ-1G6"/>
                 <constraint firstItem="JXo-hO-S75" firstAttribute="top" secondItem="HXw-wL-3RQ" secondAttribute="bottom" constant="10" id="oRu-X7-Wmk"/>
                 <constraint firstItem="HXw-wL-3RQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="sHc-Xq-XQk"/>
                 <constraint firstItem="rsq-UK-d8x" firstAttribute="top" secondItem="JXo-hO-S75" secondAttribute="bottom" constant="10" id="tqG-5l-lr9"/>
                 <constraint firstItem="HXw-wL-3RQ" firstAttribute="leading" secondItem="57p-PG-XaF" secondAttribute="trailing" constant="20" id="vTn-uu-TSb"/>
+                <constraint firstItem="TA7-GL-gvh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vjx-6T-BsI"/>
                 <constraint firstItem="JXo-hO-S75" firstAttribute="leading" secondItem="bJg-lf-7TW" secondAttribute="trailing" constant="20" id="zOl-BT-1wa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="258" y="172"/>
+            <point key="canvasLocation" x="67" y="-47"/>
         </view>
     </objects>
     <resources>

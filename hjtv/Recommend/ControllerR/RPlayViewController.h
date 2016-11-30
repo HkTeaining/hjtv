@@ -10,4 +10,6 @@
 
 @interface RPlayViewController : UIViewController
 @property(nonatomic,retain)NSString *url;
+@property(nonatomic,assign)NSInteger Jcount;
+@property(nonatomic,retain)NSString *Jurl;
 @end

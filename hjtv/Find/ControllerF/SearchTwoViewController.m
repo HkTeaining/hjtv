@@ -8,7 +8,7 @@
 
 #import "SearchTwoViewController.h"
 #import  "ParticularViewController.h"
-@interface SearchTwoViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface SearchTwoViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 @property(nonatomic,strong)UISearchBar *search;
 @property(nonatomic,copy)NSMutableArray *JuMingArry;
 @property(nonatomic,strong)UIButton *clearButton;
@@ -18,12 +18,19 @@
 @end
 
 @implementation SearchTwoViewController
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [self.cancelButton setTitle:@"搜索" forState:UIControlStateNormal];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+   [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.search=[[UISearchBar alloc]initWithFrame:CGRectMake(10,20,260,35)];
+    self.search=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width-55, 35)];
     self.search.placeholder = @"请输入剧名";
+    self.search.delegate=self;
     self.search.barTintColor=[UIColor darkGrayColor];
     [self.searchView addSubview:self.search];
     self.tabView.delegate = self;
@@ -39,13 +46,41 @@
     [self.clearButton setTitle:@"清除搜索记录" forState:UIControlStateNormal];
     [self.clearButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.clearButton addTarget:self action:@selector(clearHistory) forControlEvents:UIControlEventTouchDragInside];
-    self.cancelButton.frame = CGRectMake(280 , 30, 40, 20);
+    self.cancelButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-55+20 , 25, 35, 20);
     [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     self.cancelButton.titleLabel.font=[UIFont systemFontOfSize:15];
     self.searchView.userInteractionEnabled = YES;
-    [self.cancelButton addTarget:self action:@selector(goToBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton addTarget:self action:@selector(goToBack:) forControlEvents:UIControlEventTouchUpInside];
     self.searchView.backgroundColor = [UIColor darkGrayColor];
-    self.searchView.frame = CGRectMake(0, 0, 320, 55);
+    self.searchView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 55);
+//  self.JuMingArry = nil;
+//  [self.clearButton setTitle:@"清除搜索记录" forState:UIControlStateNormal];
+//  [self.clearButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+// [self.clearButton addTarget:self action:@selector(clearHistory) forControlEvents:UIControlEventTouchDragInside];
+//    self.cancelButton.frame = CGRectMake(280 , 30, 40, 20);
+// [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+//self.cancelButton.titleLabel.font=[UIFont systemFontOfSize:15];
+//  self.searchView.userInteractionEnabled = YES;
+// [self.cancelButton addTarget:self action:@selector(goToBack:) forControlEvents:UIControlEventTouchUpInside];
+// self.searchView.backgroundColor = [UIColor darkGrayColor];
+//    self.searchView.frame = CGRectMake(0, 0, 320, 55);
+//    [self.searchView makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.view.left);
+//        make.top.equalTo(self.view.top);
+//        make.width.equalTo(self.view.width);
+//        make.height.equalTo(64);
+//    }];
+//    [self.search makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.searchView.left).offset(10);
+//        make.top.equalTo(self.searchView.top).offset(10);
+//        make.bottom.equalTo(self.searchView.bottom).offset(10);
+//        make.right.equalTo(self.searchView.right).offset(60);
+//    }];
+//    [self.cancelButton makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.search.right).offset(10);
+//        make.right.equalTo(self.searchView.right).offset(10);
+//        make.height.equalTo(20);
+//    }];
 }
 #pragma mark - setters getters
 -(NSArray *)JuMingArry{
@@ -106,8 +141,15 @@
 }
 
 #pragma mark - Private Methods
--(void)goToBack{
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(void)goToBack:(UIButton *)sender{
+    if([sender.titleLabel.text isEqualToString:@"取消"])
+    {  [self dismissViewControllerAnimated:YES completion:nil];
+    }else
+    {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ParticularViewController" bundle:nil];
+        ParticularViewController *particularVC = [sb instantiateViewControllerWithIdentifier:@"Particular"];
+        [self presentViewController:particularVC animated:YES completion:nil];
+    }
 }
 -(void)clearHistory{
     [self.tabView removeFromSuperview];
@@ -115,18 +157,10 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigati- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)buttonPress:(UIButton *)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ParticularViewController" bundle:nil];
     ParticularViewController *particularVC = [sb instantiateViewControllerWithIdentifier:@"Particular"];
+//    particularVC.searchBar.text=sender.titleLabel.text;
     [self presentViewController:particularVC animated:YES completion:nil];
     [self.JuMingArry addObject:sender.titleLabel.text];
     [self tabView];

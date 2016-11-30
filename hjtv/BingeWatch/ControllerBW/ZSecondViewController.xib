@@ -11,20 +11,33 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="没有任何剧情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-j9-w1F">
-                    <rect key="frame" x="72" y="217" width="177" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有任何剧情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-j9-w1F">
+                    <rect key="frame" x="212" y="217" width="177" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="177" id="Mb3-q8-dWL"/>
+                        <constraint firstAttribute="height" constant="21" id="mwS-hf-fwW"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tv_live" translatesAutoresizingMaskIntoConstraints="NO" id="Uz8-1N-kyA">
-                    <rect key="frame" x="117" y="116" width="86" height="74"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv_live" translatesAutoresizingMaskIntoConstraints="NO" id="Uz8-1N-kyA">
+                    <rect key="frame" x="257" y="116" width="86" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="86" id="0FF-3Z-39F"/>
+                        <constraint firstAttribute="height" constant="74" id="mbJ-ci-FPE"/>
+                    </constraints>
                 </imageView>
             </subviews>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <constraints>
+                <constraint firstItem="Uz8-1N-kyA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="116" id="L3W-cL-Ywr"/>
+                <constraint firstAttribute="centerX" secondItem="aBb-j9-w1F" secondAttribute="centerX" id="UI0-VP-yLu"/>
+                <constraint firstItem="aBb-j9-w1F" firstAttribute="top" secondItem="Uz8-1N-kyA" secondAttribute="bottom" constant="27" id="prj-MN-zNo"/>
+                <constraint firstAttribute="centerX" secondItem="Uz8-1N-kyA" secondAttribute="centerX" id="wYU-lt-qj1"/>
+            </constraints>
         </view>
     </objects>
     <resources>

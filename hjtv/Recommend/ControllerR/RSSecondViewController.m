@@ -37,7 +37,8 @@
     [NetRequestClass getHjVideoInfoForRequestUrl:[NSString stringWithFormat:@"http://api.hanju.koudaibaobao.com/api/series/detailV3?&sid=%@",[self.recivceThreeArray[self.selectThreeRow] objectForKey:@"sid"]] WithParameter:nil WithReturnValeuBlock:^(id returnValue1, id returnValue2) {
         self.seriesArray=returnValue2;
          HjInfoSeries *ins=(HjInfoSeries *)self.seriesArray[0];
-        UIWebView *web=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 330)];
+//        UIWebView *web=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0,320,300)];
+        UIWebView *web=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 400)];
         UIScrollView *sc=[web.subviews objectAtIndex:0];
         if (sc) {
             sc.bounces=NO;
@@ -54,18 +55,31 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
-    UIView *leftlineView=[[UIView alloc]initWithFrame:CGRectMake(0, 15, 140, 2)];
-    leftlineView.backgroundColor=[UIColor grayColor];
-    UIView *rightlineView=[[UIView alloc]initWithFrame:CGRectMake(175, 15, 140, 2)];
-    rightlineView.backgroundColor=[UIColor grayColor];
-    UILabel *la=[[UILabel alloc]initWithFrame:CGRectMake(140, 0, 40, 30)];
-    la.text=@"短评";
-    [headView addSubview:leftlineView];
-    [headView addSubview:rightlineView];
-    [headView addSubview:la];
-    headView.backgroundColor=[UIColor whiteColor];
-    return headView;
+//    UIView *headView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+//    UIView *leftlineView=[[UIView alloc]initWithFrame:CGRectMake(0, 15, 140, 2)];
+//    leftlineView.backgroundColor=[UIColor grayColor];
+//    UIView *rightlineView=[[UIView alloc]initWithFrame:CGRectMake(175, 15, 140, 2)];
+//    rightlineView.backgroundColor=[UIColor grayColor];
+//    UILabel *la=[[UILabel alloc]initWithFrame:CGRectMake(140, 0, 40, 30)];
+//    la.text=@"短评";
+//    [headView addSubview:leftlineView];
+//    [headView addSubview:rightlineView];
+//    [headView addSubview:la];
+//    headView.backgroundColor=[UIColor whiteColor];
+//    return headView;
+        UIView *headView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
+        UIView *leftlineView=[[UIView alloc]initWithFrame:CGRectMake(0, 15, [UIScreen mainScreen].bounds.size.width/2.0-20, 2)];
+        leftlineView.backgroundColor=[UIColor grayColor];
+        UIView *rightlineView=[[UIView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2.0+20, 15, [UIScreen mainScreen].bounds.size.width/2.0-20, 2)];
+        rightlineView.backgroundColor=[UIColor grayColor];
+        UILabel *la=[[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2.0-20, 0, 40, 30)];
+        la.text=@"短评";
+        la.textAlignment=NSTextAlignmentCenter;
+        [headView addSubview:leftlineView];
+        [headView addSubview:rightlineView];
+        [headView addSubview:la];
+        headView.backgroundColor=[UIColor whiteColor];
+        return headView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

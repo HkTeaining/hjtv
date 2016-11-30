@@ -24,15 +24,29 @@
 }
 -(void)setSc
 {
-    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,320,216-49)];
+//    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,320,216-49)];
+//    self.sc.backgroundColor = [UIColor whiteColor];
+//    self.sc.bounces=NO;
+//    self.sc.delegate = self;
+//    self.sc.showsVerticalScrollIndicator = NO;
+//    self.sc.showsHorizontalScrollIndicator = NO;
+//
+//    self.sc.pagingEnabled = NO;
+//    [self.view addSubview:self.sc];
+    self.sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, self.view.bounds.size.height)];
+    [self.view addSubview:self.sc];
     self.sc.backgroundColor = [UIColor whiteColor];
     self.sc.bounces=NO;
     self.sc.delegate = self;
     self.sc.showsVerticalScrollIndicator = NO;
     self.sc.showsHorizontalScrollIndicator = NO;
-
-    self.sc.pagingEnabled = NO;
-    [self.view addSubview:self.sc];
+    self.sc.pagingEnabled =NO;
+//    [self.sc makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.top.equalTo(self.view.mas_top).offset(0);
+//        make.bottom.equalTo(self.view.mas_bottom).offset(0);
+//    }];
 }
 -(void)getModelData
 {
@@ -56,18 +70,27 @@
     UIButton *vi = [[UIButton alloc] initWithFrame:CGRectMake(col+(col+60)*(i%4), row+(row+30)*(i/4), 60, 30)];
         [vi setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
         [vi addTarget:self action:@selector(jump:) forControlEvents:UIControlEventTouchUpInside];
+        vi.layer.masksToBounds=YES;
+        vi.layer.cornerRadius=25;
         vi.tag=i+1;
-        vi.backgroundColor=[UIColor grayColor];
+        vi.backgroundColor=[UIColor darkGrayColor];
         [self.sc addSubview:vi];
     }
-    self.sc.contentSize=CGSizeMake(320, self.playArray.count*30/4+50+self.playArray.count*row/4);
+//    self.sc.contentSize=CGSizeMake(320, self.playArray.count*30/4+50+self.playArray.count*row/4);
+        self.sc.contentSize=CGSizeMake([UIScreen mainScreen].bounds.size.width, self.playArray.count*30/4+50+self.playArray.count*row/4);
 }
 -(void)jump:(UIButton *)btn
 {
 //    self.sendBlock(self.playArray[btn.tag-1]);
     RPlayViewController *play=[RPlayViewController new];
     play.url=[self.playArray[btn.tag-1] objectForKey:@"srcUrl"];
-//    [self presentViewController:play animated:YES completion:nil];
-        [self.navigationController pushViewController:play animated:YES];
+    play.Jurl=[self.recivceTwoArray[self.selectTwoRow] objectForKey:@"name"];
+    play.Jcount=btn.tag-1;
+    [self presentViewController:play animated:YES completion:nil];
+//        [self.navigationController pushViewController:play animated:YES];
+}
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

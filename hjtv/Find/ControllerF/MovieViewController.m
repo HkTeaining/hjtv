@@ -11,6 +11,7 @@
 #import "RDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #import "RCollectionViewCell.h"
+#import "SearchTwoViewController.h"
 
 @interface MovieViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollection;
@@ -57,7 +58,9 @@
 //}
 //#pragma mark - Private Methods
 -(void)search{
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SearchTwoViewController" bundle:nil];
+    SearchTwoViewController *searchTwoVC = [sb instantiateViewControllerWithIdentifier:@"SearchTwoViewController"];
+    [self presentViewController:searchTwoVC animated:YES completion:nil];
 }
 //#pragma mark -UITableViewDataSource
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -72,12 +75,18 @@
 //}
 -(void)setColLayout
 {
+//    [self.myCollection registerNib:[UINib nibWithNibName:@"RCollectionViewCell" bundle:nil]  forCellWithReuseIdentifier:@"cellId"];
+//    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
+//    flowLayout.itemSize=CGSizeMake(90, 130);
+//    flowLayout.minimumLineSpacing=15;
+//    flowLayout.minimumInteritemSpacing=10;
+//    flowLayout.sectionInset=UIEdgeInsetsMake(12,12, 0, 12);
+//    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+//    self.myCollection.collectionViewLayout=flowLayout;
+//    self.myCollection.backgroundColor=[UIColor whiteColor];
     [self.myCollection registerNib:[UINib nibWithNibName:@"RCollectionViewCell" bundle:nil]  forCellWithReuseIdentifier:@"cellId"];
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize=CGSizeMake(90, 130);
-    flowLayout.minimumLineSpacing=15;
-    flowLayout.minimumInteritemSpacing=10;
-    flowLayout.sectionInset=UIEdgeInsetsMake(12,12, 0, 12);
+    flowLayout.itemSize=CGSizeMake(([UIScreen mainScreen].bounds.size.width-40)/3.0, 130);
     flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
     self.myCollection.collectionViewLayout=flowLayout;
     self.myCollection.backgroundColor=[UIColor whiteColor];

@@ -19,12 +19,12 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="KIp-y5-rXs" kind="modal" identifier="seguee" id="GHc-ly-Bgg"/>
+                        <segue destination="KIp-y5-rXs" kind="modal" identifier="idt" id="LDn-0y-9ZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmx-n4-Mxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="334"/>
+            <point key="canvasLocation" x="-301" y="251"/>
         </scene>
         <!--Forum Table View Controller-->
         <scene sceneID="tC8-pN-Yqz">
@@ -242,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NeW-a8-fIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="334"/>
+            <point key="canvasLocation" x="102" y="263"/>
         </scene>
     </scenes>
     <resources>

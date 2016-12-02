@@ -60,7 +60,7 @@
     //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(movieFinishedCallback:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:self.moviePlayer];
         UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
         back.backgroundColor=[UIColor clearColor];
-    [back  setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [back  setBackgroundImage:[UIImage imageNamed:@"navi_back"] forState:UIControlStateNormal];
         [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside ];
         [self.view addSubview:back];
 }

@@ -11,4 +11,5 @@
 @interface RDetailViewController : UIViewController
 @property(nonatomic,assign)NSInteger selectRow;
 @property(nonatomic,retain)NSMutableArray *recivceArray;
+//@property(nonatomic,retain)NSMutableArray *zhuijuSendArray;
 @end

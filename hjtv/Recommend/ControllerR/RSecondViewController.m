@@ -146,7 +146,7 @@
         [im addGestureRecognizer:singleTap];
         im.userInteractionEnabled=YES;
         UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
-        imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%d",indexPath.row+1]];
+        imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%ld",indexPath.row+1]];
         UILabel *la=(UILabel *)[cell viewWithTag:200];
             cell.backgroundColor=[UIColor whiteColor];
         la.text=[NSString stringWithFormat:@"%@",[self.starArray[indexPath.row] objectForKey:@"name"]];

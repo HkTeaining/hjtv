@@ -5,7 +5,7 @@
 //  Created by mac on 16/11/22.
 //  Copyright (c) 2016年 AFNetworking Tet. All rights reserved.
 //
-
+//本项目细节总结存在所有(x)  x/ x  x/x / x/
 #import "RMainViewController.h"
 #import "RFirstViewController.h"
 #import "RSecondViewController.h"

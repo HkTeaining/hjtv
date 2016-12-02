@@ -11,7 +11,7 @@
 	<key>CFBundleIcons~ipad</key>
 	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>love.ykz.com.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>love.ykz.com.$(PRODUCT_NAME:rfc1034identifier)Client</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

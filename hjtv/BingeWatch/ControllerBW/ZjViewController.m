@@ -10,6 +10,7 @@
 #import "ZFirstViewController.h"
 #import "ZSecondViewController.h"
 #import "LoginViewController.h"
+#import "LoginConViewController.h"
 @interface ZjViewController ()<UIScrollViewDelegate>
 @property(nonatomic,strong)UIScrollView *sc;
 @property (nonatomic ,strong) ZFirstViewController  *firstVC;
@@ -24,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     [self setSc];
     [self setNav];
     [self setSelView];
@@ -105,9 +111,12 @@ bool orBJ=YES;
 }
 -(void)login
 {
-    LoginViewController *login=[[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"login"];
-    [self.navigationController pushViewController:login animated:NO];
-    NSLog(@"");
+//    LoginViewController *login=[[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"login"];
+//    [self.navigationController pushViewController:login animated:NO];
+//    NSLog(@"");
+    LoginConViewController *loginCon=[LoginConViewController new];
+    [self.navigationController pushViewController:loginCon animated:YES];
+    
 }
 -(void)dj:(UIBarButtonItem *)btn
 {

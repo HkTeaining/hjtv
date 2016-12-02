@@ -13,7 +13,7 @@
 #import "ZPUITableViewCell.h"
 #import "ZXUITableViewCell.h"
 #import "FSUITableViewCell.h"
-
+//出现link command错误:文件重复(x)  导入.m文件(x) 全局变量重复定义(x)  x   x   x
 @interface StarDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myTabStarView;
 @property(nonatomic,assign)NSInteger selectIndex;
@@ -28,11 +28,16 @@
 //    self.navigationController.navigationBar.backgroundColor=[UIColor colorWithRed:234 green:212 blue:185 alpha:1];
 //    self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:234 green:212 blue:185 alpha:1];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+//2(约束问题,非约束无问题,x,x,)
     HeadViewController *head=[[HeadViewController alloc]init];
-//    head.view.frame=CGRectMake(0, 0, 320, 300);
+    head.view.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 130);
     [self addChildViewController:head];
     self.myTabStarView.tableHeaderView=head.view;
-//        NSArray *ay=[[NSBundle mainBundle]loadNibNamed:@"HeadViewController" owner:self options:nil];
+//3
+//    UIView *vi=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,250)];
+//    vi.backgroundColor=[UIColor redColor];
+//    self.myTabStarView.tableHeaderView=vi;
+//1(约束问题,非约束问题,x,x,)         NSArray *ay=[[NSBundle mainBundle]loadNibNamed:@"HeadViewController" owner:self options:nil];
 //        UIView *vi=ay[0];
 //        self.myTabStarView.tableHeaderView=vi;
 //        vi.frame=CGRectMake(0, 0, 320, 130);
@@ -40,6 +45,7 @@
 //    [self.myTabStarView registerNib:[UINib nibWithNibName:@"ZXUITableViewCell" bundle:nil] forCellReuseIdentifier:@"zx"];
 //    [self.myTabStarView registerNib:[UINib nibWithNibName:@"ZPUITableViewCell" bundle:nil] forCellReuseIdentifier:@"zp"];
 //    [self.myTabStarView registerNib:[UINib nibWithNibName:@"FSUITableViewCell" bundle:nil] forCellReuseIdentifier:@"fs"];
+//4 //5 //6
 }
 -(void)back
 {
@@ -180,25 +186,25 @@
 {
     if(tableView.tag==10)
     {
-    UIButton *btnxi=[[UIButton alloc]initWithFrame:CGRectMake(30,10,80, 20)];
+    UIButton *btnxi=[[UIButton alloc]initWithFrame:CGRectMake(30,10,[UIScreen mainScreen].bounds.size.width/3.0-30, 20)];
     [btnxi setTitle:@"最新动态" forState:UIControlStateNormal];
     btnxi.tag=10;
     [btnxi setTitleColor:[UIColor blackColor] forState:UIControlStateNormal ];
     [btnxi setTitleColor:[UIColor redColor] forState: UIControlStateSelected ];
     [btnxi addTarget:self action:@selector(zx:) forControlEvents:UIControlEventTouchUpInside];
-    UIButton *btnzp=[[UIButton alloc]initWithFrame:CGRectMake(120,10,80, 20)];
+    UIButton *btnzp=[[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2.0-40,10,80, 20)];
     [btnzp setTitle:@"作品集" forState:UIControlStateNormal];
     [btnzp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal ];
     [btnzp setTitleColor:[UIColor redColor] forState: UIControlStateSelected ];
     btnzp.tag=20;
     [btnzp addTarget:self action:@selector(zp:) forControlEvents:UIControlEventTouchUpInside];
-    UIButton *btnfs=[[UIButton alloc]initWithFrame:CGRectMake(210,10,80, 20)];
+    UIButton *btnfs=[[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-110,10,80, 20)];
     [btnfs setTitle:@"粉丝区" forState:UIControlStateNormal];
     [btnfs addTarget:self action:@selector(fs:) forControlEvents:UIControlEventTouchUpInside];
     [btnfs setTitleColor:[UIColor blackColor] forState:UIControlStateNormal ];
     [btnfs setTitleColor:[UIColor redColor] forState: UIControlStateSelected ];
     btnfs.tag=30;
-    UIView *vi=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+    UIView *vi=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,40)];
     [vi addSubview:btnxi];
     [vi addSubview:btnzp];
     [vi addSubview:btnfs];

@@ -7,31 +7,54 @@
 //
 
 #import "ZSecondViewController.h"
+#import "HcTableViewCell.h"
 
-@interface ZSecondViewController ()
-
+@interface ZSecondViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)UITableView *tabHc;
 @end
 
 @implementation ZSecondViewController
-
+int flaghc=0;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.tabHc registerNib:[UINib nibWithNibName:@"HcTableViewCell" bundle:nil] forCellReuseIdentifier:@"cellIk"];
+    if(flaghc==0)
+    {
+        NSLog(@"没有任何东西");
+    }else
+    {
+        self.tabHc=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+        self.tabHc.delegate=self;
+        self.tabHc.dataSource=self;
+        [self.view addSubview:self.tabHc];
+    }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return 5;
 }
-*/
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+//    cell.textLabel.text=@"大海的天空在传说";
+//    return cell;
+//    HcTableViewCell *cell=[tableView  dequeueReusableCellWithIdentifier:@"cellIk"];
+//    return cell;
+    static NSString *CellTableIdentifer = @"CellTableIdentifer";
+    static BOOL nibsRegistered = NO;
+    if(!nibsRegistered)
+    {
+        UINib *nib = [UINib nibWithNibName:@"HcTableViewCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:CellTableIdentifer];
+        nibsRegistered = YES;
+    }
+   HcTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifer];
+    return cell;
+    
+}
 @end

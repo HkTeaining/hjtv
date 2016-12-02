@@ -14,6 +14,7 @@
 #import "NetRequestClass+Recommend.h"
 #import  "UIImageView+WebCache.h"
 #import "HjInfoSeries.h"
+#import "CacheViewController.h"
 
 @interface RDetailViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *mg;
@@ -56,6 +57,14 @@ dispatch_semaphore_t sema;
      [self setLine:@"jq"];
 }
 - (IBAction)play:(id)sender {
+    MBProgressHUD *HUD= [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.label.text=@"请稍等";
+    [HUD showAnimated:YES  whileExecutingBlock:^{
+        sleep(3);
+    }completionBlock:^{
+        [HUD removeFromSuperview];
+    }];
     RPlayViewController *play=[[RPlayViewController alloc]init];
     play.url=[self.playArray[0] objectForKey:@"srcUrl"];
     play.Jurl=[self.recivceArray[self.selectRow] objectForKey:@"name"];
@@ -64,6 +73,10 @@ dispatch_semaphore_t sema;
 //    [self.navigationController pushViewController:play animated:YES];
 }
 - (IBAction)hc:(id)sender {
+   CacheViewController *cache=[[CacheViewController alloc]init];
+    //有view传值(有x-view(x)对,无x-view(x)对错,x,x,),无view传值(有x-view(x)对,无x-view(x)对,x,x,),
+    cache.btnCount=[(HjInfoSeries *)self.seriesArray[0] count];
+    [self presentViewController:cache animated:YES completion:nil];
 }
 -(void)getModelData
 {
@@ -82,16 +95,16 @@ dispatch_semaphore_t sema;
     
     [self.mg sd_setImageWithURL:[NSURL URLWithString:ins.thumb] placeholderImage:nil];
     self.rank.text=[NSString stringWithFormat:@"%.1f",(float)ins.rank/10];
-    self.rank.font=[UIFont systemFontOfSize:8];
+    self.rank.font=[UIFont systemFontOfSize:13];
     self.rank.textColor=[UIColor orangeColor];
     self.ly.text=ins.source;
     if (ins.isFinished) {
-        self.js.text=[NSString stringWithFormat:@"%u集全",ins.count];
+        self.js.text=[NSString stringWithFormat:@"%ld集全",ins.count];
         self.js.font=[UIFont systemFontOfSize:12];
         self.js.textColor=[UIColor greenColor];
     }else
     {
-         self.js.text=[NSString stringWithFormat:@"更新到第%u集",ins.count];
+         self.js.text=[NSString stringWithFormat:@"更新到第%ld集",ins.count];
          self.js.font=[UIFont systemFontOfSize:12];
          self.js.textColor=[UIColor greenColor];
     }
@@ -113,7 +126,7 @@ dispatch_semaphore_t sema;
     self.navigationController.navigationBar.hidden=NO;
     self.navigationItem.title=[NSString stringWithFormat:@"%@",[self.seriesArray[0] name]];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(dj)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bbs_detail_like"] style:UIBarButtonItemStylePlain target:self action:@selector(dj)];
 }
 -(void)setSc
 {
@@ -227,9 +240,31 @@ dispatch_semaphore_t sema;
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+//简单逻辑  复杂逻辑  x   x
+//此处方法解决问题(x)  其他方法解决问题(x)   其他扩展方法x解决问题相应问题xx(x)  x  x  x
+int pselectPop=0;
 -(void)dj
 {
-    NSLog(@"");
+    if(pselectPop==0)
+    {
+    self.navigationItem.rightBarButtonItem.image=[UIImage imageNamed:@"bbs_detail_like_highlight"];
+        pselectPop=1;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = @"已加入追剧列表";
+    hud.margin = 10.f;
+    hud.removeFromSuperViewOnHide = YES;
+        [hud hideAnimated:YES afterDelay:3];}
+    else{
+     self.navigationItem.rightBarButtonItem.image=[UIImage imageNamed:@"bbs_detail_like"];
+        pselectPop=0;
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"取消追剧列表";
+        hud.margin = 10.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hideAnimated:YES afterDelay:3];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -89,7 +89,7 @@ int selectRow2;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectRow2=indexPath.row;
+    selectRow2=[NSNumber numberWithInteger:indexPath.row].intValue;
     RDetailViewController *rdetail=[[RDetailViewController alloc]init];
     rdetail.recivceArray=self.dataArrayTwo;
     rdetail.selectRow=selectRow2;

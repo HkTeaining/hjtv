@@ -1,15 +1,14 @@
 //
-//  RankTableViewOneCell.m
+//  ZjTableViewCell.m
 //  hjtv
 //
-//  Created by mac on 16/11/25.
+//  Created by mac on 16/12/1.
 //  Copyright (c) 2016年 AFNetworking Tet. All rights reserved.
 //
 
-#import "RankTableViewOneCell.h"
-#import "XxViewController.h"
+#import "ZjTableViewCell.h"
 
-@implementation RankTableViewOneCell
+@implementation ZjTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

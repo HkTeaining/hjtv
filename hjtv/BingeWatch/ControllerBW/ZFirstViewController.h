@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZFirstViewController : UIViewController
-
+//@property(nonatomic,retain)NSMutableArray *zhuijuReceiverray;
 @end

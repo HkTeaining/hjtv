@@ -57,6 +57,23 @@
 		04CAC4771DED9D9D00BDF64B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC46A1DED9D9D00BDF64B /* NSArray+MASAdditions.m */; };
 		04CAC4781DED9D9D00BDF64B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC46D1DED9D9D00BDF64B /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		04CAC4791DED9D9D00BDF64B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC46F1DED9D9D00BDF64B /* View+MASAdditions.m */; };
+		04CAC4801DEED66400BDF64B /* CacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC47E1DEED66400BDF64B /* CacheViewController.m */; };
+		04CAC4811DEED66400BDF64B /* CacheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC47F1DEED66400BDF64B /* CacheViewController.xib */; };
+		04CAC4851DEF107700BDF64B /* CaseCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4831DEF107700BDF64B /* CaseCacheViewController.m */; };
+		04CAC4861DEF107700BDF64B /* CaseCacheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4841DEF107700BDF64B /* CaseCacheViewController.xib */; };
+		04CAC48A1DEFBC0400BDF64B /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4881DEFBC0400BDF64B /* ListTableViewCell.m */; };
+		04CAC48B1DEFBC0400BDF64B /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4891DEFBC0400BDF64B /* ListTableViewCell.xib */; };
+		04CAC48F1DEFD04900BDF64B /* LoginConViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC48D1DEFD04900BDF64B /* LoginConViewController.m */; };
+		04CAC4901DEFD04A00BDF64B /* LoginConViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC48E1DEFD04900BDF64B /* LoginConViewController.xib */; };
+		04CAC4931DEFD30F00BDF64B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4921DEFD30F00BDF64B /* MBProgressHUD.m */; };
+		04CAC4B51DEFF39400BDF64B /* YzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4B31DEFF39400BDF64B /* YzViewController.m */; };
+		04CAC4B61DEFF39400BDF64B /* YzViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4B41DEFF39400BDF64B /* YzViewController.xib */; };
+		04CAC4BA1DF0263600BDF64B /* ZjTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4B81DF0263600BDF64B /* ZjTableViewCell.m */; };
+		04CAC4BB1DF0263600BDF64B /* ZjTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4B91DF0263600BDF64B /* ZjTableViewCell.xib */; };
+		04CAC4BF1DF029B800BDF64B /* HcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4BD1DF029B800BDF64B /* HcTableViewCell.m */; };
+		04CAC4C01DF029B800BDF64B /* HcTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4BE1DF029B800BDF64B /* HcTableViewCell.xib */; };
+		04CAC4C41DF10DFE00BDF64B /* XxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC4C21DF10DFE00BDF64B /* XxViewController.m */; };
+		04CAC4C51DF10DFE00BDF64B /* XxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CAC4C31DF10DFE00BDF64B /* XxViewController.xib */; };
 		04D3F4711DE411CA0012753D /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3F4701DE411CA0012753D /* TabBarViewController.m */; };
 		04FFAC9D1DE5A081007752D0 /* RSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FFAC9B1DE5A081007752D0 /* RSFirstViewController.m */; };
 		04FFAC9E1DE5A081007752D0 /* RSFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FFAC9C1DE5A081007752D0 /* RSFirstViewController.xib */; };
@@ -265,6 +282,32 @@
 		04CAC46F1DED9D9D00BDF64B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		04CAC4701DED9D9D00BDF64B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		04CAC47C1DEE9D7B00BDF64B /* Url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Url.h; path = hjtv/Config/Url.h; sourceTree = SOURCE_ROOT; };
+		04CAC47D1DEED66400BDF64B /* CacheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheViewController.h; sourceTree = "<group>"; };
+		04CAC47E1DEED66400BDF64B /* CacheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheViewController.m; sourceTree = "<group>"; };
+		04CAC47F1DEED66400BDF64B /* CacheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheViewController.xib; sourceTree = "<group>"; };
+		04CAC4821DEF107600BDF64B /* CaseCacheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseCacheViewController.h; sourceTree = "<group>"; };
+		04CAC4831DEF107700BDF64B /* CaseCacheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseCacheViewController.m; sourceTree = "<group>"; };
+		04CAC4841DEF107700BDF64B /* CaseCacheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseCacheViewController.xib; sourceTree = "<group>"; };
+		04CAC4871DEFBC0400BDF64B /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
+		04CAC4881DEFBC0400BDF64B /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
+		04CAC4891DEFBC0400BDF64B /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		04CAC48C1DEFD04900BDF64B /* LoginConViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginConViewController.h; path = ../../BingeWatch/ControllerBW/LoginConViewController.h; sourceTree = "<group>"; };
+		04CAC48D1DEFD04900BDF64B /* LoginConViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginConViewController.m; path = ../../BingeWatch/ControllerBW/LoginConViewController.m; sourceTree = "<group>"; };
+		04CAC48E1DEFD04900BDF64B /* LoginConViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginConViewController.xib; path = ../../BingeWatch/ControllerBW/LoginConViewController.xib; sourceTree = "<group>"; };
+		04CAC4911DEFD30F00BDF64B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		04CAC4921DEFD30F00BDF64B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		04CAC4B21DEFF39400BDF64B /* YzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YzViewController.h; sourceTree = "<group>"; };
+		04CAC4B31DEFF39400BDF64B /* YzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YzViewController.m; sourceTree = "<group>"; };
+		04CAC4B41DEFF39400BDF64B /* YzViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YzViewController.xib; sourceTree = "<group>"; };
+		04CAC4B71DF0263600BDF64B /* ZjTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZjTableViewCell.h; sourceTree = "<group>"; };
+		04CAC4B81DF0263600BDF64B /* ZjTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZjTableViewCell.m; sourceTree = "<group>"; };
+		04CAC4B91DF0263600BDF64B /* ZjTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZjTableViewCell.xib; sourceTree = "<group>"; };
+		04CAC4BC1DF029B800BDF64B /* HcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcTableViewCell.h; sourceTree = "<group>"; };
+		04CAC4BD1DF029B800BDF64B /* HcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcTableViewCell.m; sourceTree = "<group>"; };
+		04CAC4BE1DF029B800BDF64B /* HcTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HcTableViewCell.xib; sourceTree = "<group>"; };
+		04CAC4C11DF10DFE00BDF64B /* XxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XxViewController.h; sourceTree = "<group>"; };
+		04CAC4C21DF10DFE00BDF64B /* XxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XxViewController.m; sourceTree = "<group>"; };
+		04CAC4C31DF10DFE00BDF64B /* XxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XxViewController.xib; sourceTree = "<group>"; };
 		04D3F46F1DE411CA0012753D /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		04D3F4701DE411CA0012753D /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		04FFAC9A1DE5A081007752D0 /* RSFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFirstViewController.h; sourceTree = "<group>"; };
@@ -410,9 +453,9 @@
 		04FFADF41DEBC8EC007752D0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		04FFADF51DEBC8EC007752D0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		04FFADF61DEBC8EC007752D0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		04FFADFF1DEC0FDA007752D0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		04FFAE001DEC0FDA007752D0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		04FFAE041DEC1038007752D0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		04FFADFF1DEC0FDA007752D0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../BingeWatch/ControllerBW/LoginViewController.h; sourceTree = "<group>"; };
+		04FFAE001DEC0FDA007752D0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../BingeWatch/ControllerBW/LoginViewController.m; sourceTree = "<group>"; };
+		04FFAE041DEC1038007752D0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../BingeWatch/ControllerBW/Login.storyboard; sourceTree = "<group>"; };
 		04FFAE061DEC2D9B007752D0 /* ParticularTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticularTableViewCell.h; sourceTree = "<group>"; };
 		04FFAE071DEC2D9B007752D0 /* ParticularTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticularTableViewCell.m; sourceTree = "<group>"; };
 		04FFAE081DEC2D9B007752D0 /* ParticularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticularViewController.h; sourceTree = "<group>"; };
@@ -542,9 +585,6 @@
 				04FFADDC1DEBC7E4007752D0 /* ZSecondViewController.h */,
 				04FFADDD1DEBC7E4007752D0 /* ZSecondViewController.m */,
 				04FFADDE1DEBC7E4007752D0 /* ZSecondViewController.xib */,
-				04FFADFF1DEC0FDA007752D0 /* LoginViewController.h */,
-				04FFAE001DEC0FDA007752D0 /* LoginViewController.m */,
-				04FFAE041DEC1038007752D0 /* Login.storyboard */,
 			);
 			path = ControllerBW;
 			sourceTree = "<group>";
@@ -559,6 +599,12 @@
 		0490BD4B1DE406C700BE39F7 /* ViewBW */ = {
 			isa = PBXGroup;
 			children = (
+				04CAC4B71DF0263600BDF64B /* ZjTableViewCell.h */,
+				04CAC4B81DF0263600BDF64B /* ZjTableViewCell.m */,
+				04CAC4B91DF0263600BDF64B /* ZjTableViewCell.xib */,
+				04CAC4BC1DF029B800BDF64B /* HcTableViewCell.h */,
+				04CAC4BD1DF029B800BDF64B /* HcTableViewCell.m */,
+				04CAC4BE1DF029B800BDF64B /* HcTableViewCell.xib */,
 			);
 			path = ViewBW;
 			sourceTree = "<group>";
@@ -671,6 +717,15 @@
 				04FFAD4E1DE80BED007752D0 /* HeadViewController.h */,
 				04FFAD4F1DE80BEE007752D0 /* HeadViewController.m */,
 				04FFAD501DE80BEE007752D0 /* HeadViewController.xib */,
+				04CAC47D1DEED66400BDF64B /* CacheViewController.h */,
+				04CAC47E1DEED66400BDF64B /* CacheViewController.m */,
+				04CAC47F1DEED66400BDF64B /* CacheViewController.xib */,
+				04CAC4821DEF107600BDF64B /* CaseCacheViewController.h */,
+				04CAC4831DEF107700BDF64B /* CaseCacheViewController.m */,
+				04CAC4841DEF107700BDF64B /* CaseCacheViewController.xib */,
+				04CAC4C11DF10DFE00BDF64B /* XxViewController.h */,
+				04CAC4C21DF10DFE00BDF64B /* XxViewController.m */,
+				04CAC4C31DF10DFE00BDF64B /* XxViewController.xib */,
 			);
 			path = ControllerR;
 			sourceTree = "<group>";
@@ -730,6 +785,9 @@
 				04FFAE281DED2FC7007752D0 /* FSUITableViewCell.h */,
 				04FFAE291DED2FC7007752D0 /* FSUITableViewCell.m */,
 				04FFAE2A1DED2FC7007752D0 /* FSUITableViewCell.xib */,
+				04CAC4871DEFBC0400BDF64B /* ListTableViewCell.h */,
+				04CAC4881DEFBC0400BDF64B /* ListTableViewCell.m */,
+				04CAC4891DEFBC0400BDF64B /* ListTableViewCell.xib */,
 			);
 			path = ViewR;
 			sourceTree = "<group>";
@@ -754,6 +812,15 @@
 		0490BD591DE406D800BE39F7 /* ControllerLAR */ = {
 			isa = PBXGroup;
 			children = (
+				04FFADFF1DEC0FDA007752D0 /* LoginViewController.h */,
+				04FFAE001DEC0FDA007752D0 /* LoginViewController.m */,
+				04FFAE041DEC1038007752D0 /* Login.storyboard */,
+				04CAC48C1DEFD04900BDF64B /* LoginConViewController.h */,
+				04CAC48D1DEFD04900BDF64B /* LoginConViewController.m */,
+				04CAC48E1DEFD04900BDF64B /* LoginConViewController.xib */,
+				04CAC4B21DEFF39400BDF64B /* YzViewController.h */,
+				04CAC4B31DEFF39400BDF64B /* YzViewController.m */,
+				04CAC4B41DEFF39400BDF64B /* YzViewController.xib */,
 			);
 			path = ControllerLAR;
 			sourceTree = "<group>";
@@ -804,6 +871,8 @@
 		04A574461DE54BC3003C9620 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				04CAC4911DEFD30F00BDF64B /* MBProgressHUD.h */,
+				04CAC4921DEFD30F00BDF64B /* MBProgressHUD.m */,
 				04CAC4591DED9D9D00BDF64B /* Masonry */,
 				04FFADE61DEBC8EB007752D0 /* MJRefresh */,
 				04FFACD11DE681F5007752D0 /* SDWebImage */,
@@ -1065,24 +1134,30 @@
 			files = (
 				04FFAE2C1DED2FC7007752D0 /* FSUITableViewCell.xib in Resources */,
 				04FFAE141DEC2D9B007752D0 /* SearchTwoViewController.storyboard in Resources */,
+				04CAC4C01DF029B800BDF64B /* HcTableViewCell.xib in Resources */,
 				04A574311DE47920003C9620 /* RCollectionViewThreeCell.xib in Resources */,
 				0490BD2E1DE4038E00BE39F7 /* Main.storyboard in Resources */,
+				04CAC4B61DEFF39400BDF64B /* YzViewController.xib in Resources */,
 				04A574361DE5450B003C9620 /* RDetailViewController.xib in Resources */,
 				04FFAD611DE836D4007752D0 /* StarDetailViewController.xib in Resources */,
 				04A5741D1DE43658003C9620 /* RSecondViewController.xib in Resources */,
 				04FFAD2B1DE7ECA4007752D0 /* MoreDetailViewController.xib in Resources */,
 				04FFADBB1DEBC3AF007752D0 /* StarZHQViewController.storyboard in Resources */,
 				04FFAD9B1DEBC160007752D0 /* VarietyViewController.storyboard in Resources */,
+				04CAC4C51DF10DFE00BDF64B /* XxViewController.xib in Resources */,
 				04FFAD911DEBC160007752D0 /* MovieViewController.storyboard in Resources */,
 				04FFADE21DEBC7E4007752D0 /* ZFirstViewController.xib in Resources */,
 				04FFAC9E1DE5A081007752D0 /* RSFirstViewController.xib in Resources */,
 				04FFAE271DED2FB2007752D0 /* ZPUITableViewCell.xib in Resources */,
+				04CAC4BB1DF0263600BDF64B /* ZjTableViewCell.xib in Resources */,
 				04FFAD931DEBC160007752D0 /* ReadMe.rtf in Resources */,
+				04CAC4811DEED66400BDF64B /* CacheViewController.xib in Resources */,
 				04FFAD5C1DE818F1007752D0 /* RankTableViewTwoCell.xib in Resources */,
 				04FFADE51DEBC7E4007752D0 /* ZSecondViewController.xib in Resources */,
 				04FFACA81DE5A0A9007752D0 /* RSThreeViewController.xib in Resources */,
 				04FFAE121DEC2D9B007752D0 /* ParticularViewController.storyboard in Resources */,
 				04FFADF71DEBC8EC007752D0 /* MJRefresh.bundle in Resources */,
+				04CAC4861DEF107700BDF64B /* CaseCacheViewController.xib in Resources */,
 				04FFAE221DED2F97007752D0 /* ZXUITableViewCell.xib in Resources */,
 				04FFAD8C1DEBC160007752D0 /* ForumViewController.storyboard in Resources */,
 				04FFAD8D1DEBC160007752D0 /* HJZHEViewController.storyboard in Resources */,
@@ -1090,12 +1165,14 @@
 				04FFAE051DEC1038007752D0 /* Login.storyboard in Resources */,
 				04FFAD571DE818D6007752D0 /* RankTableViewOneCell.xib in Resources */,
 				04FFAD521DE80BEE007752D0 /* HeadViewController.xib in Resources */,
+				04CAC48B1DEFBC0400BDF64B /* ListTableViewCell.xib in Resources */,
 				0490BD331DE4038E00BE39F7 /* LaunchScreen.xib in Resources */,
 				04A574221DE4482B003C9620 /* RCollectionViewCell.xib in Resources */,
 				04A574181DE43647003C9620 /* RFirstViewController.xib in Resources */,
 				04A574271DE475E0003C9620 /* RCollectionHeaderViewCollectionReusableView.xib in Resources */,
 				04A5742C1DE4790F003C9620 /* RCollectionViewTwoCell.xib in Resources */,
 				0490BD301DE4038E00BE39F7 /* Images.xcassets in Resources */,
+				04CAC4901DEFD04A00BDF64B /* LoginConViewController.xib in Resources */,
 				04FFADE01DEBC7E4007752D0 /* ReadMe.rtf in Resources */,
 				04FFACA31DE5A098007752D0 /* RSSecondViewController.xib in Resources */,
 			);
@@ -1126,8 +1203,10 @@
 				04CAC4791DED9D9D00BDF64B /* View+MASAdditions.m in Sources */,
 				04FFACA21DE5A098007752D0 /* RSSecondViewController.m in Sources */,
 				04FFAD8E1DEBC160007752D0 /* HJZHQViewController.m in Sources */,
+				04CAC4851DEF107700BDF64B /* CaseCacheViewController.m in Sources */,
 				04FFAD141DE6B25D007752D0 /* HjInfoSeries.m in Sources */,
 				04FFAD5B1DE818F1007752D0 /* RankTableViewTwoCell.m in Sources */,
+				04CAC4931DEFD30F00BDF64B /* MBProgressHUD.m in Sources */,
 				04A5747D1DE54BD9003C9620 /* UIWebView+AFNetworking.m in Sources */,
 				04D3F4711DE411CA0012753D /* TabBarViewController.m in Sources */,
 				04FFACD01DE679EB007752D0 /* NetRequestClass+Recommend.m in Sources */,
@@ -1155,6 +1234,7 @@
 				04A574771DE54BD9003C9620 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				04FFAE021DEC0FDA007752D0 /* LoginViewController.m in Sources */,
 				04FFADFB1DEBC8EC007752D0 /* MJRefreshHeaderView.m in Sources */,
+				04CAC4C41DF10DFE00BDF64B /* XxViewController.m in Sources */,
 				04FFACC91DE5D707007752D0 /* MJType.m in Sources */,
 				04FFAE111DEC2D9B007752D0 /* ParticularViewController.m in Sources */,
 				04CAC4731DED9D9D00BDF64B /* MASConstraintMaker.m in Sources */,
@@ -1171,6 +1251,7 @@
 				04FFACF31DE681F5007752D0 /* MKAnnotationView+WebCache.m in Sources */,
 				04FFACA71DE5A0A9007752D0 /* RSThreeViewController.m in Sources */,
 				04A574171DE43647003C9620 /* RFirstViewController.m in Sources */,
+				04CAC4BF1DF029B800BDF64B /* HcTableViewCell.m in Sources */,
 				04FFAD081DE68708007752D0 /* StarVideoInfo.m in Sources */,
 				04A5745D1DE54BD5003C9620 /* AFHTTPSessionManager.m in Sources */,
 				04FFACC61DE5D707007752D0 /* MJIvar.m in Sources */,
@@ -1184,12 +1265,15 @@
 				04FFAE101DEC2D9B007752D0 /* ParticularTableViewCell.m in Sources */,
 				04FFACF71DE681F5007752D0 /* SDWebImageDecoder.m in Sources */,
 				04CAC4711DED9D9D00BDF64B /* MASCompositeConstraint.m in Sources */,
+				04CAC4BA1DF0263600BDF64B /* ZjTableViewCell.m in Sources */,
 				04FFAD011DE681F5007752D0 /* UIImageView+WebCache.m in Sources */,
 				04FFADFC1DEBC8EC007752D0 /* UIScrollView+MJExtension.m in Sources */,
+				04CAC48A1DEFBC0400BDF64B /* ListTableViewCell.m in Sources */,
 				04FFAD991DEBC160007752D0 /* VarietyTableViewCell.m in Sources */,
 				04FFADE31DEBC7E4007752D0 /* ZjViewController.m in Sources */,
 				04A5745F1DE54BD5003C9620 /* AFSecurityPolicy.m in Sources */,
 				04FFAD9A1DEBC160007752D0 /* VarietyViewController.m in Sources */,
+				04CAC4B51DEFF39400BDF64B /* YzViewController.m in Sources */,
 				04FFAD8F1DEBC160007752D0 /* MovieTableViewCell.m in Sources */,
 				0490BD571DE406CD00BE39F7 /* RMainViewController.m in Sources */,
 				04CAC4721DED9D9D00BDF64B /* MASConstraint.m in Sources */,
@@ -1197,6 +1281,7 @@
 				04FFADE11DEBC7E4007752D0 /* ZFirstViewController.m in Sources */,
 				04CAC4751DED9D9D00BDF64B /* MASViewAttribute.m in Sources */,
 				04A5747A1DE54BD9003C9620 /* UIImageView+AFNetworking.m in Sources */,
+				04CAC4801DEED66400BDF64B /* CacheViewController.m in Sources */,
 				04CAC4781DED9D9D00BDF64B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				04FFACFF1DE681F5007752D0 /* UIImage+WebP.m in Sources */,
 				04FFAC9D1DE5A081007752D0 /* RSFirstViewController.m in Sources */,
@@ -1219,6 +1304,7 @@
 				04A574791DE54BD9003C9620 /* UIButton+AFNetworking.m in Sources */,
 				04A5741C1DE43658003C9620 /* RSecondViewController.m in Sources */,
 				04FFADFE1DEBC8EC007752D0 /* UIView+MJExtension.m in Sources */,
+				04CAC48F1DEFD04900BDF64B /* LoginConViewController.m in Sources */,
 				04FFAD511DE80BEE007752D0 /* HeadViewController.m in Sources */,
 				04FFACCC1DE5D707007752D0 /* NSObject+MJKeyValue.m in Sources */,
 				04CAC4741DED9D9D00BDF64B /* MASLayoutConstraint.m in Sources */,

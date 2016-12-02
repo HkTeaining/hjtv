@@ -81,6 +81,14 @@
 }
 -(void)jump:(UIButton *)btn
 {
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.label.text=@"请稍等";
+    [HUD showAnimated:YES  whileExecutingBlock:^{
+        sleep(3);
+    }completionBlock:^{
+    [HUD removeFromSuperview];
+    }];
 //    self.sendBlock(self.playArray[btn.tag-1]);
     RPlayViewController *play=[RPlayViewController new];
     play.url=[self.playArray[btn.tag-1] objectForKey:@"srcUrl"];

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZpSCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ydtkfttg" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtZ-Um-jzw">
+                        <rect key="frame" x="0.0" y="147" width="120" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="zlE-ML-M2K"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDb-Gb-Ici">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="139"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="139" id="XzZ-BL-6rw"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qtZ-Um-jzw" secondAttribute="bottom" constant="-7" id="03F-xI-haq"/>
+                <constraint firstItem="CDb-Gb-Ici" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FIt-L1-dQI"/>
+                <constraint firstItem="qtZ-Um-jzw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IiM-vH-36c"/>
+                <constraint firstItem="CDb-Gb-Ici" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOE-Wc-hjN"/>
+                <constraint firstAttribute="trailing" secondItem="CDb-Gb-Ici" secondAttribute="trailing" id="qkR-yU-yO5"/>
+                <constraint firstAttribute="trailing" secondItem="qtZ-Um-jzw" secondAttribute="trailing" id="xw4-ea-uXl"/>
+            </constraints>
+            <size key="customSize" width="121" height="181"/>
+            <point key="canvasLocation" x="257" y="220"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="337" height="300"/>
+    </resources>
+</document>

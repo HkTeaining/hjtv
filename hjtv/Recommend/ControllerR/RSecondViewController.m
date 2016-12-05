@@ -142,8 +142,8 @@
         RCollectionViewTwoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdtwo" forIndexPath:indexPath];
         UIImageView *im=(UIImageView *)[cell viewWithTag:100];
         [im sd_setImageWithURL:[NSURL URLWithString:[self.starArray[indexPath.row] objectForKey:@"thumb"]] placeholderImage:nil];
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
-        [im addGestureRecognizer:singleTap];
+//        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+//        [im addGestureRecognizer:singleTap];
         im.userInteractionEnabled=YES;
         UIImageView *imTwo=(UIImageView *)[cell viewWithTag:300];
         imTwo.image=[UIImage imageNamed:[NSString stringWithFormat:@"star_rank_%ld",indexPath.row+1]];
@@ -170,18 +170,18 @@
     }
     
 }
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    selectRow=indexPath.row;
-//    RDetailViewController *rdetail=[[RDetailViewController alloc]init];
-//    rdetail.recivceArray=self.listArray;
-//    rdetail.selectRow=selectRow;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    StarDetailViewController *rdetail=[[StarDetailViewController alloc]init];
+    rdetail.kj=indexPath.row;
+    rdetail.rArray=self.starArray;
+    [self.navigationController pushViewController:rdetail animated:YES];
+}
+//- (void)singleTap:(UITapGestureRecognizer *)tap {
+//    StarDetailViewController *rdetail=[[StarDetailViewController alloc]init];
 //    [self.navigationController pushViewController:rdetail animated:YES];
 //}
-- (void)singleTap:(UITapGestureRecognizer *)tap {
-    StarDetailViewController *rdetail=[[StarDetailViewController alloc]init];
-    [self.navigationController pushViewController:rdetail animated:YES];
-}- (void)singleTapTwo:(UITapGestureRecognizer *)tap {
+- (void)singleTapTwo:(UITapGestureRecognizer *)tap {
     MoreDetailViewController *rdetail=[[MoreDetailViewController alloc]init];
     [self.navigationController pushViewController:rdetail animated:YES];
 }

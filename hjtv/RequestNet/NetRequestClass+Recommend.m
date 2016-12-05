@@ -17,6 +17,7 @@
 #import "HjInfoSeries.h"
 #import "HjInfo.h"
 #import "HjInfoPlayInfo.h"
+#import "ZxVideo.h"
 @implementation NetRequestClass (Recommend)
 +(void)getHjVideoListForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block
 {
@@ -119,6 +120,17 @@
             [listAy addObject:info];
         }
         block(listAy);
+    } WithErrorCodeBlock:^(id errorCode) {
+        NSLog(@"%@",errorCode);
+    } WithFailureBlock:^{
+        NSLog(@"失败");
+    }];
+}
++(void)getXjForRequestUrl:(NSString *)url WithParameter:(NSDictionary *)parameter  WithReturnValeuBlock: (ReturnValueBlock) block
+{
+    [self NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
+        ZxVideo *list=[ZxVideo objectWithKeyValues:returnValue];
+        block(list);
     } WithErrorCodeBlock:^(id errorCode) {
         NSLog(@"%@",errorCode);
     } WithFailureBlock:^{

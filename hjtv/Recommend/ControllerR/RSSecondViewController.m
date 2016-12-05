@@ -9,7 +9,13 @@
 #import "RSSecondViewController.h"
 #import "NetRequestClass+Recommend.h"
 #import "HjInfoSeries.h"
-
+//
+//网络数据请求同步异步操作解决界面和数据冲突问题:设置网络请求时信号量(x),在请求回调中操作相应东西(x),默认(x),调式明确谁先谁后(x),其他操作(x),x,x,x,x,
+//x
+//
+//
+//传值操作:之前所有总结(x)   这里操作总结(x)  项目处总结(x)   其他总结(x)  x  x   x  x
+//x
 
 @interface RSSecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTab;

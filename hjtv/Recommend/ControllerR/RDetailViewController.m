@@ -61,16 +61,16 @@ dispatch_semaphore_t sema;
     [self.view addSubview:HUD];
     HUD.label.text=@"请稍等";
     [HUD showAnimated:YES  whileExecutingBlock:^{
-        sleep(3);
+        sleep(2);
     }completionBlock:^{
-        [HUD removeFromSuperview];
-    }];
+    [HUD removeFromSuperview];
     RPlayViewController *play=[[RPlayViewController alloc]init];
     play.url=[self.playArray[0] objectForKey:@"srcUrl"];
     play.Jurl=[self.recivceArray[self.selectRow] objectForKey:@"name"];
     play.Jcount=0;
-    [self presentViewController:play animated:YES completion:nil];
-//    [self.navigationController pushViewController:play animated:YES];
+    [self presentViewController:play animated:NO completion:nil];
+    //    [self.navigationController pushViewController:play animated:YES];
+    }];
 }
 - (IBAction)hc:(id)sender {
    CacheViewController *cache=[[CacheViewController alloc]init];

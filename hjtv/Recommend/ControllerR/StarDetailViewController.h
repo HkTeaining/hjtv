@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StarDetailViewController : UIViewController
-
+@property(nonatomic,assign)NSInteger  kj;
+@property(nonatomic,retain)NSMutableArray* rArray;
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZPUITableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UICollectionView *myCol1;
-
+//@property (weak, nonatomic) IBOutlet UICollectionView *myCol1;
+@property(nonatomic,strong)UICollectionView *tabcell2;
 @end

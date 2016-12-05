@@ -10,6 +10,7 @@
 
 @interface FSUITableViewCell : UITableViewCell<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *myTb1;
+//@property (strong, nonatomic) IBOutlet UITableView *myTb1;
+@property(nonatomic,strong)UITableView *tabcell;
 
 @end

@@ -43,7 +43,9 @@
     NSInteger row = indexPath.row;
     if (section==0) {
         if (row ==1) {
-            HJZHQViewController *hjzhqVC = [HJZHQViewController new];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"HJZHEViewController" bundle:nil];
+            
+            HJZHQViewController *hjzhqVC = [sb instantiateViewControllerWithIdentifier:@"HJZHQViewController"];
             [self.navigationController pushViewController:hjzhqVC animated:YES];
         }
         else{

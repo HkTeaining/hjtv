@@ -85,17 +85,18 @@
     [self.view addSubview:HUD];
     HUD.label.text=@"请稍等";
     [HUD showAnimated:YES  whileExecutingBlock:^{
-        sleep(3);
+        sleep(2);
     }completionBlock:^{
     [HUD removeFromSuperview];
-    }];
-//    self.sendBlock(self.playArray[btn.tag-1]);
+    //    self.sendBlock(self.playArray[btn.tag-1]);
     RPlayViewController *play=[RPlayViewController new];
     play.url=[self.playArray[btn.tag-1] objectForKey:@"srcUrl"];
     play.Jurl=[self.recivceTwoArray[self.selectTwoRow] objectForKey:@"name"];
     play.Jcount=btn.tag-1;
-    [self presentViewController:play animated:YES completion:nil];
-//        [self.navigationController pushViewController:play animated:YES];
+    [self presentViewController:play animated:NO completion:nil];
+    //        [self.navigationController pushViewController:play animated:YES];
+
+    }];
 }
 -(NSUInteger)supportedInterfaceOrientations
 {

@@ -1161,6 +1161,7 @@
 				TargetAttributes = {
 					0490BD1E1DE4038E00BE39F7 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 9G7FGFX8FP;
 					};
 					0490BD371DE4038F00BE39F7 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1508,9 +1509,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9G7FGFX8FP;
 				GCC_PREFIX_HEADER = /Users/mac/hjtv/hjtv/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = hjtv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.loopchat.fat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1519,9 +1522,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9G7FGFX8FP;
 				GCC_PREFIX_HEADER = /Users/mac/hjtv/hjtv/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = hjtv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.loopchat.fat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
